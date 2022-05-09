@@ -14,5 +14,9 @@
           ]
 ## Backend
 
-## Diagrams (Database)
+ --- Under development
 
+## Diagrams (Database)
+* Class Diagram Between USER and ROLE
+
+     [![ERD-1-User-Role-Relation.png](https://i.postimg.cc/7YYRQfH0/ERD-1-User-Role-Relation.png)](https://postimg.cc/qgSQNBCv)
