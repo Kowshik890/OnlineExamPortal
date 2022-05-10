@@ -1,0 +1,49 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <mat-card>
+            <div class="container text-center">
+                <img src="../../../assets/register.png" alt="register">
+            </div>
+            <h1 class="text-center">Register Here !!</h1>
+            <form [formGroup]="registerUserForm">
+                <div class="col-md-6 offset-md-3">
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Username</mat-label>
+                        <input matInput formControlName="username" required placeholder="Enter username here...">
+                        <mat-hint style="color: red;">Username must be unique*</mat-hint>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Password</mat-label>
+                        <input type="password" matInput formControlName="password" required placeholder="Enter password here...">
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>First Name</mat-label>
+                        <input matInput formControlName="firstName" required placeholder="Enter first name here...">
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput formControlName="lastName" required placeholder="Enter last name here...">
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Email</mat-label>
+                        <input type="email" matInput formControlName="email" required placeholder="Enter email here...">
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Phone Number</mat-label>
+                        <input type="number‚" matInput formControlName="phone" required placeholder="Enter phone number here...">
+                    </mat-form-field>
+
+                    <div class="container text-center">
+                        <button type="submit" mat-raised-button color="primary" (click)="registerUser()" [disabled]="registerUserForm.invalid">Register</button>
+                        <button type="submit" mat-raised-button color="secondary" (click)="clearFields()" style="margin-left: 20px;">Clear</button>
+                    </div>
+                </div>
+            </form>
+        </mat-card>
+    </div>
+</div>
