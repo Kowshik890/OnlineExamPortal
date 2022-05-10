@@ -18,7 +18,17 @@ N.B: under development...
             "./node_modules/bootstrap-grid-only-css/dist/css/bootstrap-grid.min.css"
           ]
       ```
-      
+* Angular Sweetalert  
+  * npm install sweetalert2 
+  * import Swal from 'sweetalert2' in each components
+    ```
+      Swal.fire({
+         title: 'Success!',
+         text: 'User registered successfully.',
+         icon: 'success',
+         confirmButtonText: 'OK'
+      })
+    ```
 
 ## Backend
 * Add CORS Mapping to avoid "No 'Access-Control-Allow-Origin' header is present"
