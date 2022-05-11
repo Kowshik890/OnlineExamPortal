@@ -2,6 +2,11 @@
 
 ## This Online Exam Portal project is developing using Spring Boot, Angular and MySQL.
 
+## Project Functionalities
+* User Registration with validation
+
+N.B: under development...
+
 ## Frontend
 * Angular Material
   * ng add @angular/material
@@ -12,9 +17,23 @@
           "styles": [
             "./node_modules/bootstrap-grid-only-css/dist/css/bootstrap-grid.min.css"
           ]
-## Backend
+      ```
+* Angular Sweetalert  
+  * npm install sweetalert2 
+  * import Swal from 'sweetalert2' in each components
+    ```
+      Swal.fire({
+         title: 'Success!',
+         text: 'User registered successfully.',
+         icon: 'success',
+         confirmButtonText: 'OK'
+      })
+    ```
 
- --- Under development
+## Backend
+* Add CORS Mapping to avoid "No 'Access-Control-Allow-Origin' header is present"
+
+
 
 ## Diagrams (Database)
 * Class Diagram Between USER and ROLE
