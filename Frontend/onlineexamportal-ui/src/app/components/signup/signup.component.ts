@@ -3,7 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserRegisterDTO } from 'src/app/datatransferobject/userRegister-dto';
 import { UserService } from 'src/app/services/user.service';
-
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-signup',
@@ -39,9 +39,21 @@ export class SignupComponent implements OnInit {
     }
 
     this.userService.registerUser(userRegisterMetaData).subscribe(response => {
-      this.matSnackbar.open("User registered successfully.", "OK");
+      // this.matSnackbar.open("User registered successfully.", "OK", {verticalPosition: 'top'});
+      Swal.fire({
+        title: 'Success!',
+        text: 'User registered successfully.',
+        icon: 'success',
+        confirmButtonText: 'OK'
+      })
     },(error) => {
-      this.matSnackbar.open("Something went wrong. Try again.", "OK");
+      // this.matSnackbar.open("Something went wrong. Try again.", "OK", {verticalPosition: 'top'});
+      Swal.fire({
+        title: 'Error!',
+        text: 'Username already in use. Try another username please.',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      })
     })
     
   }

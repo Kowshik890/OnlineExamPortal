@@ -1,1 +1,28 @@
-<p>login works!</p>
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <mat-card>
+            <div class="container text-center">
+                <img src="../../../assets/login.png" alt="login" class="img_size">
+            </div>
+            <h1 class="text-center">Login Here !!</h1>
+            <form>
+                <div class="col-md-6 offset-md-3">
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Username</mat-label>
+                        <input matInput required placeholder="Enter username here...">
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width" appearance="fill">
+                        <mat-label>Password</mat-label>
+                        <input type="password" matInput  required placeholder="Enter password here...">
+                    </mat-form-field>
+
+                    <div class="container text-center">
+                        <button type="submit" mat-raised-button color="primary" >Login</button>
+                        <button type="submit" mat-raised-button color="secondary" class="ml20">Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </mat-card>
+    </div>
+</div>

@@ -11,3 +11,8 @@
  .full-width {
      width: 100%;
  }
+
+ .img_size {
+  width: 175px; 
+  height: 140px;
+ }
