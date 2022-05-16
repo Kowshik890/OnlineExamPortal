@@ -6,6 +6,7 @@ import com.project.onlineexamportal.model.UserRole;
 import com.project.onlineexamportal.repository.RoleRepository;
 import com.project.onlineexamportal.repository.UserRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
@@ -19,6 +20,7 @@ public class UserService {
     private final RoleService roleService;
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
+    private final PasswordEncoder passwordEncoder;
 
     public User createUser(User user) throws Exception {
 
@@ -46,6 +48,7 @@ public class UserService {
             }*/
 
             user.getUserRoles().addAll(userRoles);
+            user.setPassword(passwordEncoder.encode(user.getPassword()));
             tempUser = this.userRepository.save(user);
         }
         return tempUser;
@@ -70,6 +73,7 @@ public class UserService {
         tempUser.setFirstName(user.getFirstName());
         tempUser.setLastName(user.getLastName());
         tempUser.setEmail(user.getEmail());
+        tempUser.setPassword(passwordEncoder.encode(user.getPassword()));
         tempUser.setPhone(user.getPhone());
         tempUser.setProfile(user.getProfile());
 
