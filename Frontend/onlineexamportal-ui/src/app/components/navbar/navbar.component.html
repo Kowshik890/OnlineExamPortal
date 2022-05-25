@@ -4,6 +4,8 @@
         <span style="font-size: 20px;" class="ml10">Online Exam Portal</span>
     </button>
     <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" routerLink="/login">Login</button>
-    <button mat-icon-button class="example-icon ml20 mr20" aria-label="Example icon-button with share icon" routerLink="/signup">Register</button>
+    <button *ngIf="!userService.isLoggedIn()" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" routerLink="/login">Login</button>
+    <button *ngIf="!userService.isLoggedIn()" mat-icon-button class="example-icon ml20 mr20" aria-label="Example icon-button with share icon" routerLink="/signup">Register</button>
+    <button *ngIf="userService.isLoggedIn()" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" (click)="logout()" routerLink="/login">Logout</button>
+    <button *ngIf="userService.isLoggedIn()" mat-icon-button class="example-icon ml20 mr20" aria-label="Example icon-button with share icon">{{ userService.getUser().username }}</button>
   </mat-toolbar>

@@ -3,7 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserRegisterDTO } from 'src/app/datatransferobject/userRegister-dto';
 import { UserService } from 'src/app/services/user.service';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-signup',
@@ -13,7 +13,6 @@ import Swal from 'sweetalert2'
 export class SignupComponent implements OnInit {
 
   registerUserForm!: FormGroup;
-  submitButtonDisable: boolean = true;
 
   constructor(private matSnackbar: MatSnackBar, private userService: UserService) { }
 

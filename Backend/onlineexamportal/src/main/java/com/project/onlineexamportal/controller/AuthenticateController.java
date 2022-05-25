@@ -3,6 +3,7 @@ package com.project.onlineexamportal.controller;
 import com.project.onlineexamportal.config.JwtUtil;
 import com.project.onlineexamportal.model.JwtRequest;
 import com.project.onlineexamportal.model.JwtResponse;
+import com.project.onlineexamportal.model.User;
 import com.project.onlineexamportal.service.LoadUserDetailsService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -13,10 +14,9 @@ import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.security.Principal;
 
 @RestController
 @AllArgsConstructor
@@ -52,5 +52,11 @@ public class AuthenticateController {
         } catch (BadCredentialsException e)  {
             throw new Exception("Invalid Credentials " + e.getMessage());
         }
+    }
+
+    // return the details of current user
+    @GetMapping("/current-user")
+    public User getCurrentUser(Principal principal) {
+        return ((User) this.loadUserDetailsService.loadUserByUsername(principal.getName()));
     }
 }
