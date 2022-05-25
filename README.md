@@ -33,6 +33,10 @@ N.B: under development...
 ## Backend
 * Add CORS Mapping to avoid "No 'Access-Control-Allow-Origin' header is present"
 * Add 'Spring Security, io.jsonwebtoken (jjwt), javax.xml.bind (jaxb-api)' dependencies for JWT Authentication
+* Create JWT Token request and response classes
+* JWT Authentication workflow
+
+  [![a.jpg](https://i.postimg.cc/cJzJncMS/a.jpg)](https://postimg.cc/mcQRxC5X)
 
 
 ## Diagrams (Database)
