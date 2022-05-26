@@ -29,6 +29,8 @@ N.B: under development...
          confirmButtonText: 'OK'
       })
     ```
+  * Add "Angular Guard" to secure routing for respective user
+    * ng g guard <Name (Admin/User/...)>
 
 ## Backend
 * Add CORS Mapping to avoid "No 'Access-Control-Allow-Origin' header is present"
