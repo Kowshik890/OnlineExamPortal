@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, retry } from 'rxjs';
+import { Observable, retry, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { UserLoginDTO } from '../datatransferobject/userLogin-dto';
 import { UserRegisterDTO } from '../datatransferobject/userRegister-dto';
@@ -11,6 +11,7 @@ import { UserRegisterDTO } from '../datatransferobject/userRegister-dto';
 export class UserService {
 
   private baseURL = environment.apiBaseUrl;
+  public loginStatusSubject = new Subject<boolean>();
 
   constructor(private httpClient: HttpClient) { }
 
