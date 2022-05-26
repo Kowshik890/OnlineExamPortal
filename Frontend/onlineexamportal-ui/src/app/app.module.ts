@@ -15,7 +15,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
-
+import { MatListModule } from '@angular/material/list';
+import { MatTableModule } from '@angular/material/table';
 
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -25,6 +26,9 @@ import { HomeComponent } from './components/home/home.component';
 import { authInterceptorProvider } from './services/auth.interceptor';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { AdminWelcomeComponent } from './components/admin-welcome/admin-welcome.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +40,9 @@ import { UserDashboardComponent } from './components/user-dashboard/user-dashboa
     HomeComponent,
     AdminDashboardComponent,
     UserDashboardComponent,
+    ProfileComponent,
+    SidebarComponent,
+    AdminWelcomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,7 +58,9 @@ import { UserDashboardComponent } from './components/user-dashboard/user-dashboa
     ReactiveFormsModule,
     HttpClientModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatListModule,
+    MatTableModule,
   ],
   providers: [authInterceptorProvider],
   bootstrap: [AppComponent]

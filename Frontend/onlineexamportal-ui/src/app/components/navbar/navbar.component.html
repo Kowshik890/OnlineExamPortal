@@ -7,5 +7,5 @@
     <button *ngIf="!isUserActive" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" routerLink="/login">Login</button>
     <button *ngIf="!isUserActive" mat-icon-button class="example-icon ml20 mr20" aria-label="Example icon-button with share icon" routerLink="/signup">Register</button>
     <button *ngIf="isUserActive" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" (click)="logout()" routerLink="/login">Logout</button>
-    <button *ngIf="isUserActive" mat-icon-button class="example-icon ml20 mr20" aria-label="Example icon-button with share icon">{{ user.username }}</button>
+    <button *ngIf="isUserActive" mat-icon-button class="example-icon ml20 mr20" aria-label="Example icon-button with share icon" routerLink="/admin/profile">{{ user.username }}</button>
   </mat-toolbar>
