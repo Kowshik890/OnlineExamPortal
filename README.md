@@ -4,6 +4,8 @@
 
 ## Project Functionalities
 * User Registration with validation
+* User Login with JWT Token Authentication
+* Redirect to respective user dashboard
 
 N.B: under development...
 
