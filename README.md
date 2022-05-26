@@ -4,6 +4,8 @@
 
 ## Project Functionalities
 * User Registration with validation
+* User Login with JWT Token Authentication
+* Redirect to respective user dashboard
 
 N.B: under development...
 
@@ -31,6 +33,7 @@ N.B: under development...
     ```
   * Add "Angular Guard" to secure routing for respective user
     * ng g guard <Name (Admin/User/...)>
+  * Add Angular Subject event to notify respective user
 
 ## Backend
 * Add CORS Mapping to avoid "No 'Access-Control-Allow-Origin' header is present"
