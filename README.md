@@ -6,6 +6,7 @@
 * User Registration with validation
 * User Login with JWT Token Authentication
 * Redirect to respective user dashboard
+* Show User Profile details 
 
 N.B: under development...
 
