@@ -23,6 +23,8 @@ public class UserController {
     @PostMapping("/")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public User createUser(@RequestBody User user) throws Exception {
+
+        System.out.println("Username: " + user.getUsername());
         return this.userService.createUser(user);
     }
 
