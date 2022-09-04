@@ -49,8 +49,17 @@ N.B: under development...
 
 * ER Diagram Between USER and ROLE
 
-[![Screenshot-2022-08-26-at-13-53-59.png](https://i.postimg.cc/BQwrtNKK/Screenshot-2022-08-26-at-13-53-59.png)](https://postimg.cc/6ynjmrzW)
+   [![ERD1-User-Role.png](https://i.postimg.cc/g0YNGXM8/ERD1-User-Role.png)](https://postimg.cc/5XRw30W2)
 
 * Class Diagram Between USER and ROLE
 
-     [![ERD-1-User-Role-Relation.png](https://i.postimg.cc/7YYRQfH0/ERD-1-User-Role-Relation.png)](https://postimg.cc/qgSQNBCv)
+   [![ERD-1-User-Role-Relation.png](https://i.postimg.cc/7YYRQfH0/ERD-1-User-Role-Relation.png)](https://postimg.cc/qgSQNBCv)
+     
+     
+* ER Diagram Between Category, Quiz and Question
+
+   [![ERD2-Category-Quiz-Question.png](https://i.postimg.cc/XqXP4GYQ/ERD2-Category-Quiz-Question.png)](https://postimg.cc/jn0chjN7)
+
+* Class Diagram Between Category, Quiz and Question
+
+   [![CD2-Category-Quiz-Question.png](https://i.postimg.cc/mZ6qVwmq/CD2-Category-Quiz-Question.png)](https://postimg.cc/mhC8gQfN)
