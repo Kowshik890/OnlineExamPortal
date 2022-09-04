@@ -1,17 +1,12 @@
 package com.project.onlineexamportal.controller;
 
-import com.project.onlineexamportal.model.Role;
 import com.project.onlineexamportal.model.User;
-import com.project.onlineexamportal.model.UserRole;
-import com.project.onlineexamportal.service.RoleService;
 import com.project.onlineexamportal.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @RestController
 @RequestMapping("/api/user")

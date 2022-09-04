@@ -26,7 +26,7 @@ public class UserService {
 
         User tempUser = this.userRepository.findByUsername(user.getUsername());
 
-        if(tempUser!=null) {
+        if(tempUser !=null) {
             System.out.println("User already exists.");
             throw new Exception("User already exists.");
         } else {

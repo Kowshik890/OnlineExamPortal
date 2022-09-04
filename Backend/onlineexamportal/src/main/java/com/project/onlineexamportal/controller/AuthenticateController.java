@@ -6,7 +6,6 @@ import com.project.onlineexamportal.model.JwtResponse;
 import com.project.onlineexamportal.model.User;
 import com.project.onlineexamportal.service.LoadUserDetailsService;
 import lombok.AllArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
