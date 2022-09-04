@@ -46,6 +46,11 @@ N.B: under development...
 
 
 ## Diagrams (Database)
+
+* ER Diagram Between USER and ROLE
+
+[![Screenshot-2022-08-26-at-13-53-59.png](https://i.postimg.cc/BQwrtNKK/Screenshot-2022-08-26-at-13-53-59.png)](https://postimg.cc/6ynjmrzW)
+
 * Class Diagram Between USER and ROLE
 
      [![ERD-1-User-Role-Relation.png](https://i.postimg.cc/7YYRQfH0/ERD-1-User-Role-Relation.png)](https://postimg.cc/qgSQNBCv)
