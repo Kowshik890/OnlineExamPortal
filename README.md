@@ -7,6 +7,7 @@
 * User Login with JWT Token Authentication
 * Redirect to respective user dashboard
 * Show User Profile details 
+* Admin can add, view, delete and update category
 
 N.B: under development...
 
