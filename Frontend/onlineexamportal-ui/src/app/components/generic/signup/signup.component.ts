@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserRegisterDTO } from 'src/app/datatransferobject/userRegister-dto';
-import { UserService } from 'src/app/services/user.service';
+import { UserService } from 'src/app/services/generic/user.service';
 import Swal from 'sweetalert2';
 
 @Component({

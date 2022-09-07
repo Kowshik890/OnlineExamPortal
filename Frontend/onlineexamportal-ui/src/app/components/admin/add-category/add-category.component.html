@@ -1,0 +1,35 @@
+<mat-card>
+    <h1>Add New Category</h1>
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <form [formGroup]="addCategoryForm">
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Title</mat-label>
+                            <input 
+                                autofocus
+                                matInput 
+                                formControlName="title" 
+                                required 
+                                placeholder="Enter title here...">
+                        </mat-form-field>
+
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Description</mat-label>
+                            <textarea 
+                                matInput 
+                                formControlName="description" 
+                                rows="15"
+                                placeholder="Enter description here..."></textarea>
+                        </mat-form-field>
+            
+                        <div class="container text-center">
+                            <button type="submit" mat-raised-button color="primary" (click)="addCategory()" [disabled]="addCategoryForm.invalid">Add Category</button>
+                        </div> 
+                    </form>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

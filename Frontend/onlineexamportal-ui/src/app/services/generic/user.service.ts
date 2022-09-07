@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, retry, Subject } from 'rxjs';
+import { UserLoginDTO } from 'src/app/datatransferobject/userLogin-dto';
+import { UserRegisterDTO } from 'src/app/datatransferobject/userRegister-dto';
 import { environment } from 'src/environments/environment';
-import { UserLoginDTO } from '../datatransferobject/userLogin-dto';
-import { UserRegisterDTO } from '../datatransferobject/userRegister-dto';
 
 @Injectable({
   providedIn: 'root'

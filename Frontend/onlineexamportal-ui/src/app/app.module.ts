@@ -18,17 +18,19 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { SignupComponent } from './components/signup/signup.component';
-import { LoginComponent } from './components/login/login.component';
-import { HomeComponent } from './components/home/home.component';
-import { authInterceptorProvider } from './services/auth.interceptor';
-import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
-import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
-import { ProfileComponent } from './components/profile/profile.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { AdminWelcomeComponent } from './components/admin-welcome/admin-welcome.component';
+import { NavbarComponent } from './components/generic/navbar/navbar.component';
+import { FooterComponent } from './components/generic/footer/footer.component';
+import { SignupComponent } from './components/generic/signup/signup.component';
+import { LoginComponent } from './components/generic/login/login.component';
+import { HomeComponent } from './components/generic/home/home.component';
+import { authInterceptorProvider } from './services/generic/auth.interceptor';
+import { AdminDashboardComponent } from './components/admin/admin-dashboard/admin-dashboard.component';
+import { UserDashboardComponent } from './components/user/user-dashboard/user-dashboard.component';
+import { ProfileComponent } from './components/admin/profile/profile.component';
+import { SidebarComponent } from './components/admin/sidebar/sidebar.component';
+import { AdminWelcomeComponent } from './components/admin/admin-welcome/admin-welcome.component';
+import { AddCategoryComponent } from './components/admin/add-category/add-category.component';
+import { ViewCategoryComponent } from './components/admin/view-category/view-category.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import { AdminWelcomeComponent } from './components/admin-welcome/admin-welcome.
     ProfileComponent,
     SidebarComponent,
     AdminWelcomeComponent,
+    AddCategoryComponent,
+    ViewCategoryComponent,
   ],
   imports: [
     BrowserModule,

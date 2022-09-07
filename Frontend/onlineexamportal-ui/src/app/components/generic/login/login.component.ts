@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserLoginDTO } from 'src/app/datatransferobject/userLogin-dto';
-import { UserService } from 'src/app/services/user.service';
+import { UserService } from 'src/app/services/generic/user.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private userService: UserService, private router: Router) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
     this.loginUserForm = new FormGroup({
       username: new FormControl(''),
       password: new FormControl('')
