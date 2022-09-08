@@ -23,7 +23,10 @@ export class CategoryService {
   }
 
   deleteCategoryById(categoryId: any) {
-    console.log("category ID: " + categoryId);
     return this.http.delete(`${this.baseURL}/api/category/${categoryId}`);
+  }
+
+  updateCategoryById(categoryId: any, updateCategoryMetaData: CategoryDTO): Observable<CategoryDTO> {
+    return this.http.put<CategoryDTO>(`${this.baseURL}/api/category/${categoryId}`, updateCategoryMetaData);
   }
 }

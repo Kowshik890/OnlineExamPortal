@@ -39,7 +39,6 @@ export class AddCategoryComponent implements OnInit {
       })
     },
     (error)=> {
-      console.log(error);
       Swal.fire({
         title: 'Error!',
         text: 'Server error. Try again later...',

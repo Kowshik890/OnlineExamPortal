@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { CategoryDTO } from 'src/app/datatransferobject/category-dto';
 import { CategoryService } from 'src/app/services/admin/category.service';
+import { CategoryDataService } from 'src/app/services/shareddata/category-data.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -10,8 +12,9 @@ import Swal from 'sweetalert2';
 export class ViewCategoryComponent implements OnInit {
 
   categories: any[] = [];
+  categoryDTO: CategoryDTO | undefined;
 
-  constructor(private categoryService: CategoryService) { }
+  constructor(private categoryService: CategoryService, private sharedCategoryData: CategoryDataService) { }
  
   ngOnInit(): void {
     this.getAllCategories();
@@ -32,9 +35,7 @@ export class ViewCategoryComponent implements OnInit {
   }
 
   deleteCategory(id: any) {
-    this.categoryService.deleteCategoryById(id).subscribe((response: any) => {
-      console.log(response);
-      
+    this.categoryService.deleteCategoryById(id).subscribe((response: any) => {      
       Swal.fire({
         title: 'Success!!',
         text: 'Category has been deleted successfully...',
@@ -50,5 +51,10 @@ export class ViewCategoryComponent implements OnInit {
         confirmButtonText: 'OK'
       })
     })
+  }
+
+  editButtonClicked(category: CategoryDTO) {
+    this.categoryDTO = category;
+    this.sharedCategoryData.setCategory(this.categoryDTO);
   }
 }

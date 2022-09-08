@@ -31,6 +31,7 @@ import { SidebarComponent } from './components/admin/sidebar/sidebar.component';
 import { AdminWelcomeComponent } from './components/admin/admin-welcome/admin-welcome.component';
 import { AddCategoryComponent } from './components/admin/add-category/add-category.component';
 import { ViewCategoryComponent } from './components/admin/view-category/view-category.component';
+import { UpdateCategoryComponent } from './components/admin/update-category/update-category.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { ViewCategoryComponent } from './components/admin/view-category/view-cat
     AdminWelcomeComponent,
     AddCategoryComponent,
     ViewCategoryComponent,
+    UpdateCategoryComponent,
   ],
   imports: [
     BrowserModule,
