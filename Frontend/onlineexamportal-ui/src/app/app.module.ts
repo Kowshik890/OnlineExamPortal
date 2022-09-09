@@ -17,6 +17,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 import { NavbarComponent } from './components/generic/navbar/navbar.component';
 import { FooterComponent } from './components/generic/footer/footer.component';
@@ -33,6 +34,7 @@ import { AddCategoryComponent } from './components/admin/add-category/add-catego
 import { ViewCategoryComponent } from './components/admin/view-category/view-category.component';
 import { UpdateCategoryComponent } from './components/admin/update-category/update-category.component';
 import { ViewQuizComponent } from './components/admin/view-quiz/view-quiz.component';
+import { AddQuizComponent } from './components/admin/add-quiz/add-quiz.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +53,7 @@ import { ViewQuizComponent } from './components/admin/view-quiz/view-quiz.compon
     ViewCategoryComponent,
     UpdateCategoryComponent,
     ViewQuizComponent,
+    AddQuizComponent,
   ],
   imports: [
     BrowserModule,
@@ -69,6 +72,8 @@ import { ViewQuizComponent } from './components/admin/view-quiz/view-quiz.compon
     MatIconModule,
     MatListModule,
     MatTableModule,
+    MatSlideToggleModule,
+    
   ],
   providers: [authInterceptorProvider],
   bootstrap: [AppComponent]
