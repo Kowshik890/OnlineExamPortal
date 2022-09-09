@@ -12,6 +12,7 @@ import { UserGuard } from './services/user/user.guard';
 import { ViewCategoryComponent } from './components/admin/view-category/view-category.component';
 import { AddCategoryComponent } from './components/admin/add-category/add-category.component';
 import { UpdateCategoryComponent } from './components/admin/update-category/update-category.component';
+import { ViewQuizComponent } from './components/admin/view-quiz/view-quiz.component';
 
 const routes: Routes = [
   {
@@ -40,6 +41,9 @@ const routes: Routes = [
       },
       {
         path: 'update-category', component: UpdateCategoryComponent
+      },
+      {
+        path: 'view-quizzes', component: ViewQuizComponent
       }
     ]
   },
