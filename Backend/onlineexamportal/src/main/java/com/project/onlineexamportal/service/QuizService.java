@@ -18,12 +18,12 @@ public class QuizService {
     }
 
     public List<Quiz> getAllQuizzes() {
-        return this.quizRepository.findAll();
+        return this.quizRepository.findAllByOrderByIdDesc();
     }
 
     public void deleteQuizById(Long quizId) {
         System.out.println("inside quiz service");
-        this.quizRepository.deleteByQuizId(quizId);
+        this.quizRepository.deleteById(quizId);
     }
 
     public Quiz updateQuizById(Long quizId, Quiz quiz) {

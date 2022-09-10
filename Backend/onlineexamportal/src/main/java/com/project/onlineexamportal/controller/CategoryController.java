@@ -29,10 +29,16 @@ public class CategoryController {
         return this.categoryService.findCategoryById(categoryId);
     }
 
-    @GetMapping("/all")
+    @GetMapping("/all/desc")
     @ResponseStatus(HttpStatus.OK)
-    public List<Category> findAllCategories() {
-        return this.categoryService.getAllCategories();
+    public List<Category> findAllCategoriesDesc() {
+        return this.categoryService.getAllCategoriesDesc();
+    }
+
+    @GetMapping("/all/asc")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Category> findAllCategoriesAsc() {
+        return this.categoryService.getAllCategoriesAsc();
     }
 
     @DeleteMapping("/{categoryId}")

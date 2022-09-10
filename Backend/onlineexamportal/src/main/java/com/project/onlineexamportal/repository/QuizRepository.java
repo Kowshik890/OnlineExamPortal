@@ -8,13 +8,15 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Repository
 public interface QuizRepository extends JpaRepository<Quiz, Long> {
+    List<Quiz> findAllByOrderByIdDesc();
 
     // Custom Delete Method using Delete Query
-    @Transactional
+    /*@Transactional
     @Modifying
     @Query(value = "DELETE FROM quiz WHERE id=?1", nativeQuery = true)
-    public void deleteByQuizId(Long quizId);
+    public void deleteByQuizId(Long quizId);*/
 }

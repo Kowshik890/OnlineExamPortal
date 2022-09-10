@@ -21,7 +21,7 @@ public class Category {
     private Long id;
     private String title;
     private String description;
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "category")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "category")   // fetch = FetchType.EAGER is removed due to causing issue while deleting quiz
     @JsonIgnore
     private Set<Quiz> quizzes = new LinkedHashSet<>(); // here there will be no columns for quizzes. that's why mappedBy = "category"
 

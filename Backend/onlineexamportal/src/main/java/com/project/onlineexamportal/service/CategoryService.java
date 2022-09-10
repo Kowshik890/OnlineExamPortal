@@ -16,7 +16,11 @@ public class CategoryService {
         return this.categoryRepository.save(category);
     }
 
-    public List<Category> getAllCategories() {
+    public List<Category> getAllCategoriesDesc() {
+        return this.categoryRepository.findAllByOrderByIdDesc();
+    }
+
+    public List<Category> getAllCategoriesAsc() {
         return this.categoryRepository.findAll();
     }
 
