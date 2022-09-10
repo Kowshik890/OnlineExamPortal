@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { QuizDTO } from 'src/app/datatransferobject/quiz-dto';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -13,5 +15,9 @@ export class QuizService {
 
   getAllQuizzes() {
     return this.http.get(`${this.baseURL}/api/quiz/all`);
+  }
+
+  addQuiz(addQuizMetaData: QuizDTO): Observable<QuizDTO> {
+    return this.http.post<QuizDTO>(`${this.baseURL}/api/quiz/add`, addQuizMetaData);
   }
 }

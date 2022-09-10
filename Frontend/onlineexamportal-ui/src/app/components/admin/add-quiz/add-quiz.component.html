@@ -51,13 +51,14 @@
 
                         <mat-slide-toggle
                             class="mt10"
+                            formControlName="active"
                             [checked]="false">
                             Publish Status
                         </mat-slide-toggle>
             
                         <mat-form-field class="full-width mt20" appearance="outline">
                             <mat-label>Select Category</mat-label>
-                            <mat-select name="category" required>
+                            <mat-select formControlName="category" required>
                               <mat-option *ngFor="let category of categories" [value]="category.id">
                                 {{category.title}}
                               </mat-option>
@@ -65,7 +66,7 @@
                         </mat-form-field>
 
                         <div class="container text-center">
-                            <button type="submit" mat-raised-button color="primary">Add Quiz</button>
+                            <button type="submit" mat-raised-button color="primary" (click)="addQuiz()" [disabled]="addQuizForm.invalid">Add Quiz</button>
                         </div> 
                     </form>
                 </div>
@@ -73,3 +74,5 @@
         </div>
     </mat-card-content>
 </mat-card>
+
+
