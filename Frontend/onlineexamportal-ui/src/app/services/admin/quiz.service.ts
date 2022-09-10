@@ -20,4 +20,8 @@ export class QuizService {
   addQuiz(addQuizMetaData: QuizDTO): Observable<QuizDTO> {
     return this.http.post<QuizDTO>(`${this.baseURL}/api/quiz/add`, addQuizMetaData);
   }
+
+  deleteQuizById(quizId: any) {
+    return this.http.delete(`${this.baseURL}/api/quiz/${quizId}`);
+  }
 }

@@ -14,8 +14,12 @@ export class CategoryService {
 
   constructor(private http: HttpClient) { }
 
+  getAllCategoriesOrderByIdDesc() {
+    return this.http.get(`${this.baseURL}/api/category/all/desc`);
+  }
+
   getAllCategories() {
-    return this.http.get(`${this.baseURL}/api/category/all`);
+    return this.http.get(`${this.baseURL}/api/category/all/asc`);
   }
 
   addCategory(addCategoryMetaData: CategoryDTO): Observable<CategoryDTO> {

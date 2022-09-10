@@ -5,7 +5,7 @@
             <!-- <mat-icon mat-list-icon>category</mat-icon> -->
             <div mat-line>{{category.title}}</div>
             <div mat-line>{{category.description}}</div>
-            <mat-icon mat-list-icon (click)="deleteCategory(category.id)">delete</mat-icon>    <!-- -->
+            <mat-icon mat-list-icon (click)="deleteCategory(category.id, category.title)">delete</mat-icon>    <!-- -->
             <mat-icon mat-list-icon routerLink="/admin/update-category" (click)="editButtonClicked(category)">edit</mat-icon>
             <mat-divider></mat-divider>
         </mat-list-item>
