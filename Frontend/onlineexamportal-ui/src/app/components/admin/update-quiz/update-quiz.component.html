@@ -1,10 +1,10 @@
 <mat-card>
-    <h1>Add New Quiz</h1>
+    <h1>Update Quiz</h1>
     <mat-card-content>
         <div class="bootstrap-wrapper">
             <div class="row">
                 <div class="col-md-8 offset-md-2">
-                    <form [formGroup]="addQuizForm">
+                    <form [formGroup]="updateQuizForm">
                         <mat-form-field class="full-width" appearance="outline">
                             <mat-label>Title</mat-label>
                             <input 
@@ -65,7 +65,7 @@
                         </mat-form-field>
 
                         <div class="container text-center">
-                            <button type="submit" mat-raised-button color="primary" (click)="addQuiz()" [disabled]="addQuizForm.invalid">Add Quiz</button>
+                            <button type="submit" mat-raised-button color="primary" (click)="updateQuizById()" [disabled]="updateQuizForm.invalid">Update Quiz</button>
                         </div> 
                     </form>
                 </div>

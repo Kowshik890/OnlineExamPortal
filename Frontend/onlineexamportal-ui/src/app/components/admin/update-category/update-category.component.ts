@@ -24,11 +24,9 @@ export class UpdateCategoryComponent implements OnInit {
       title: new FormControl(this.categoryDTO?.title),
       description: new FormControl(this.categoryDTO?.description)
     })
-
-    
   }
 
-  updateCategory() {
+  updateCategoryById() {
 
     const updateCategoryDTO: CategoryDTO = {
       title: this.updateCategoryForm.get('title')?.value,

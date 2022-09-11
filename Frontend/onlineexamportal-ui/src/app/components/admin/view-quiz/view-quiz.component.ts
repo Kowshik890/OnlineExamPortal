@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { QuizDTO } from 'src/app/datatransferobject/quiz-dto';
 import { QuizService } from 'src/app/services/admin/quiz.service';
+import { QuizDataService } from 'src/app/services/shareddata/quiz-data.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -10,8 +12,9 @@ import Swal from 'sweetalert2';
 export class ViewQuizComponent implements OnInit {
 
   quizzes: any[] = [];
+  quizDTO: QuizDTO | undefined;
 
-  constructor(private quizService: QuizService) { }
+  constructor(private quizService: QuizService, private sharedQuizData: QuizDataService) { }
 
   ngOnInit(): void {
     this.getAllQuizzes();
@@ -51,13 +54,18 @@ export class ViewQuizComponent implements OnInit {
         },(error)=> {
           Swal.fire({
             title: 'Error!',
-            text: 'Error in deleting category.',
+            text: 'Error in deleting quiz.',
             icon: 'error',
             confirmButtonText: 'OK'
           })
         })
       }
     })
+  }
+
+  editButtonClicked(quizDTO: QuizDTO) {
+    this.quizDTO = quizDTO;
+    this.sharedQuizData.setQuiz(this.quizDTO);
   }
 }
 

@@ -14,6 +14,7 @@ import { AddCategoryComponent } from './components/admin/add-category/add-catego
 import { UpdateCategoryComponent } from './components/admin/update-category/update-category.component';
 import { ViewQuizComponent } from './components/admin/view-quiz/view-quiz.component';
 import { AddQuizComponent } from './components/admin/add-quiz/add-quiz.component';
+import { UpdateQuizComponent } from './components/admin/update-quiz/update-quiz.component';
 
 const routes: Routes = [
   {
@@ -48,6 +49,9 @@ const routes: Routes = [
       },
       {
         path: 'add-quiz', component: AddQuizComponent
+      },
+      {
+        path: 'update-quiz', component: UpdateQuizComponent
       }
     ]
   },

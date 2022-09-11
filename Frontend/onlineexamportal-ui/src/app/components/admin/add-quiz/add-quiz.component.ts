@@ -58,7 +58,6 @@ export class AddQuizComponent implements OnInit {
         id: this.addQuizForm.get('category')?.value
       }
     }
-    console.log("quizDTO: " + JSON.stringify(quizDTO));
 
     // add request to the server
     this.quizService.addQuiz(quizDTO).subscribe((response) => {

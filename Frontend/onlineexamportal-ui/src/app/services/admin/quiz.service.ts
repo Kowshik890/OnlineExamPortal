@@ -24,4 +24,8 @@ export class QuizService {
   deleteQuizById(quizId: any) {
     return this.http.delete(`${this.baseURL}/api/quiz/${quizId}`);
   }
+
+  updateQuizById(quizId: any, updateQuizMetaData: QuizDTO): Observable<QuizDTO> {
+    return this.http.put<QuizDTO>(`${this.baseURL}/api/quiz/${quizId}`, updateQuizMetaData);
+  }
 }
