@@ -36,6 +36,21 @@ N.B: under development...
   * Add "Angular Guard" to secure routing for respective user
     * ng g guard <Name (Admin/User/...)>
   * Add Angular Subject event to notify respective user
+  * Use Sweetalert popup to show warning while deleting any specific record.
+    ```
+      Swal.fire({
+        title: title,
+        text: "Are you sure to delete this quiz?",
+        icon: "warning",
+        confirmButtonText: "Delete",
+        showCancelButton: true
+       }).then((response) => {
+        if(response.isConfirmed) {
+          ========================
+          ========================
+        }
+       })
+    ```
 
 ## Backend
 * Add CORS Mapping to avoid "No 'Access-Control-Allow-Origin' header is present"
