@@ -47,7 +47,7 @@ public class CategoryController {
         this.categoryService.deleteCategoryById(categoryId);
     }
 
-    @PutMapping("/{categoryId}")
+    @PutMapping("/update")
     @ResponseStatus(HttpStatus.OK)
     public Category updateCategoryById(@PathVariable("categoryId") Long categoryId, @RequestBody Category category) {
         return this.categoryService.updateCategoryById(categoryId, category);
