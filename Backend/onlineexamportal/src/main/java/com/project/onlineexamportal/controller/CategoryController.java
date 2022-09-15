@@ -1,6 +1,5 @@
 package com.project.onlineexamportal.controller;
 
-import com.project.onlineexamportal.model.User;
 import com.project.onlineexamportal.model.exam.Category;
 import com.project.onlineexamportal.service.CategoryService;
 import lombok.AllArgsConstructor;

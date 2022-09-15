@@ -56,4 +56,11 @@ public class QuestionService {
        Collections.shuffle(questionList);   // shuffle the questions
        return questionList;
     }
+
+    public List<Question> getALLQuestionsOfQuizAdmin(Long quizId) {
+        Quiz quiz = new Quiz();
+        quiz.setId(quizId);
+        List<Question> questionsOfQuiz = this.questionRepository.findByQuiz(quiz);
+        return questionsOfQuiz;
+    }
 }

@@ -35,6 +35,13 @@ public class QuestionController {
         return this.questionService.getQuestionsOfQuiz(quizId);
     }
 
+    // get all question of any Quiz for Admin
+    @GetMapping("/quiz/all/{quizId}")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Question> getAllQuestionsOfQuizAdmin(@PathVariable("quizId") Long quizId) {
+        return this.questionService.getALLQuestionsOfQuizAdmin(quizId);
+    }
+
     @PutMapping("/{questionId}")
     @ResponseStatus(HttpStatus.OK)
     public Question updateQuestionById(@PathVariable("questionId") Long questionId, @RequestBody Question question) {
