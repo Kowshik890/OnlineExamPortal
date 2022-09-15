@@ -64,7 +64,7 @@ export class UpdateQuizComponent implements OnInit {
       this.updateQuizForm.reset();
       Swal.fire({
         title: 'Success!!',
-        text: 'Quiz is added successfully...',
+        text: 'Quiz has updated successfully...',
         icon: 'success',
         confirmButtonText: 'OK'
       })

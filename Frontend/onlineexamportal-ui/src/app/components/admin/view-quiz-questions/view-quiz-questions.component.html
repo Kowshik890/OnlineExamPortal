@@ -1,11 +1,20 @@
 <mat-card>
-    <h1>All Questions of {{quizTitle}}</h1>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 mt10"><h1>All Questions of {{quizTitle}}</h1></div>
+            <div class="col-md-6">
+                <mat-card-actions>
+                    <button mat-flat-button color="primary" [routerLink]="'/admin/add-quiz-question/' + quizId + '/' + quizTitle">Add Question</button>
+                </mat-card-actions>
+            </div>
+        </div>
+    </div>
 </mat-card>
 
 <mat-card class="mt10" *ngFor="let question of questions, let i = index">
     <mat-card-content>
         <p>
-            <b>Q-{{i+1}}:</b>
+            <b>Q{{i+1}}:</b>
             <span class="ml10" [innerHTML]="question.content"></span>
         </p>
 
