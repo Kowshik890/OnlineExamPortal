@@ -10,7 +10,7 @@
     </mat-card-header>
     <mat-card-content>{{quiz.description}}</mat-card-content>
     <mat-card-actions>
-        <button mat-flat-button color="primary">Questions</button>
+        <button mat-flat-button color="primary" [routerLink]="'/admin/view-quiz-questions/' + quiz.id + '/' + quiz.title">Questions</button>
         <button mat-stroked-button color="warn" class="ml20">Max Marks {{quiz.maxMarks}}</button>
         <button mat-stroked-button color="warn" class="ml10">No. of Questions {{quiz.numberOfQuestions}}</button>
         <button mat-stroked-button color="primary" *ngIf="quiz.active" class="ml10">Active</button>

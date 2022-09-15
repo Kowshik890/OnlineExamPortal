@@ -36,6 +36,7 @@ import { UpdateCategoryComponent } from './components/admin/update-category/upda
 import { ViewQuizComponent } from './components/admin/view-quiz/view-quiz.component';
 import { AddQuizComponent } from './components/admin/add-quiz/add-quiz.component';
 import { UpdateQuizComponent } from './components/admin/update-quiz/update-quiz.component';
+import { ViewQuizQuestionsComponent } from './components/admin/view-quiz-questions/view-quiz-questions.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { UpdateQuizComponent } from './components/admin/update-quiz/update-quiz.
     ViewQuizComponent,
     AddQuizComponent,
     UpdateQuizComponent,
+    ViewQuizQuestionsComponent,
   ],
   imports: [
     BrowserModule,
