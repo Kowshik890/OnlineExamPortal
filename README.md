@@ -8,6 +8,7 @@
 * Redirect to respective user dashboard
 * Show User Profile details 
 * Admin can add, view, delete and update category
+* Admin can add, view, delete and update quiz
 
 N.B: under development...
 
