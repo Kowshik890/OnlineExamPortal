@@ -37,7 +37,7 @@ public class QuestionService {
         tempQuestion.setOption2(question.getOption2());
         tempQuestion.setOption3(question.getOption3());
         tempQuestion.setOption4(question.getOption4());
-
+        tempQuestion.setAnswer(question.getAnswer());
         return this.questionRepository.save(tempQuestion);
     }
 
