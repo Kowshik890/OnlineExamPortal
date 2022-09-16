@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class QuestionService {
-
+  
   private baseURL = environment.apiBaseUrl;
 
   constructor(private http: HttpClient) { }
@@ -23,5 +23,13 @@ export class QuestionService {
 
   deleteQuestionById(questionId: any) {
     return this.http.delete(`${this.baseURL}/api/question/${questionId}`);
+  }
+
+  getSingleQuestionById(questionId: any): Observable<QuestionDTO> {
+    return this.http.get<QuestionDTO>(`${this.baseURL}/api/question/${questionId}`);
+  }
+
+  updateQuestionById(questionId: any, questionDTO: QuestionDTO) {
+    return this.http.put<QuestionDTO>(`${this.baseURL}/api/question/${questionId}`, questionDTO);
   }
 }

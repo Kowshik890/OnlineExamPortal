@@ -1,0 +1,86 @@
+<mat-card>
+    <h1>Update the Question of <span style="font-weight: bold; color: rgb(173, 146, 146);">{{questionContent}}</span></h1>
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <form [formGroup]="updateQuestionForm">
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Content</mat-label>
+                            <input 
+                                autofocus
+                                matInput 
+                                formControlName="content" 
+                                required 
+                                placeholder="Enter question content here...">
+                        </mat-form-field>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <mat-form-field class="full-width" appearance="outline">
+                                    <mat-label>Option 1</mat-label>
+                                    <input 
+                                        autofocus
+                                        matInput 
+                                        formControlName="option1" 
+                                        required 
+                                        placeholder="Enter option 1 here...">
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <mat-form-field class="full-width" appearance="outline">
+                                    <mat-label>Option 2</mat-label>
+                                    <input 
+                                        autofocus
+                                        matInput 
+                                        formControlName="option2" 
+                                        required 
+                                        placeholder="Enter option 2 here...">
+                                </mat-form-field>
+                            </div>
+                        </div> 
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <mat-form-field class="full-width" appearance="outline">
+                                    <mat-label>Option 3</mat-label>
+                                    <input 
+                                        autofocus
+                                        matInput 
+                                        formControlName="option3" 
+                                        required 
+                                        placeholder="Enter option 3 here...">
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <mat-form-field class="full-width" appearance="outline">
+                                    <mat-label>Option 4</mat-label>
+                                    <input 
+                                        autofocus
+                                        matInput 
+                                        formControlName="option4" 
+                                        required 
+                                        placeholder="Enter option 4 here...">
+                                </mat-form-field>
+                            </div>
+                        </div> 
+
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Select Answer</mat-label>
+                            <mat-select formControlName="answer" required>
+                              <mat-option value="a">a</mat-option>
+                              <mat-option value="b">b</mat-option>
+                              <mat-option value="c">c</mat-option>
+                              <mat-option value="d">d</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <div class="container text-center">
+                            <button type="submit" mat-raised-button color="primary" (click)="updateQuestion()" [disabled]="updateQuestionForm.invalid">Update Question</button>
+                        </div> 
+                    </form>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

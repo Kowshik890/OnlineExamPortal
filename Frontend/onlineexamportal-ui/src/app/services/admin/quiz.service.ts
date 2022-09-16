@@ -28,4 +28,8 @@ export class QuizService {
   updateQuizById(quizId: any, updateQuizMetaData: QuizDTO): Observable<QuizDTO> {
     return this.http.put<QuizDTO>(`${this.baseURL}/api/quiz/${quizId}`, updateQuizMetaData);
   }
+
+  getQuizById(quizId: any) {
+    return this.http.get(`${this.baseURL}/api/quiz/${quizId}`);
+  }
 }
