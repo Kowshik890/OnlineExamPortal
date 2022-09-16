@@ -9,6 +9,7 @@
 * Show User Profile details 
 * Admin can add, view, delete and update category
 * Admin can add, view, delete and update quiz
+* Admin can add, view, delete and update Question
 
 N.B: under development...
 
