@@ -18,6 +18,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 import { NavbarComponent } from './components/generic/navbar/navbar.component';
 import { FooterComponent } from './components/generic/footer/footer.component';
@@ -81,7 +82,7 @@ import { UpdateQuizQuestionComponent } from './components/admin/update-quiz-ques
     MatListModule,
     MatTableModule,
     MatSlideToggleModule,
-    
+    CKEditorModule,
   ],
   providers: [authInterceptorProvider],
   bootstrap: [AppComponent]

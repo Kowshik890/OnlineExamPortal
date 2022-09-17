@@ -1,11 +1,19 @@
 <mat-card>
-    <h1>Update the Question of <span style="font-weight: bold; color: rgb(173, 146, 146);">{{questionContent}}</span></h1>
+    <h1>Update Question</h1>
     <mat-card-content>
         <div class="bootstrap-wrapper">
             <div class="row">
                 <div class="col-md-8 offset-md-2">
                     <form [formGroup]="updateQuestionForm">
-                        <mat-form-field class="full-width" appearance="outline">
+
+                        <ckeditor 
+                            [editor]="Editor" 
+                            formControlName="content"
+                            autofocus
+                            matInput
+                            required
+                        ></ckeditor>
+                        <!-- <mat-form-field class="full-width" appearance="outline">
                             <mat-label>Content</mat-label>
                             <input 
                                 autofocus
@@ -13,7 +21,7 @@
                                 formControlName="content" 
                                 required 
                                 placeholder="Enter question content here...">
-                        </mat-form-field>
+                        </mat-form-field> -->
                         
                         <div class="row">
                             <div class="col-md-6">

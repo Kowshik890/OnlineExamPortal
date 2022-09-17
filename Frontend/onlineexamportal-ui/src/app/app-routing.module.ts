@@ -63,7 +63,7 @@ const routes: Routes = [
         path: 'add-quiz-question/:id/:title', component: AddQuizQuestionComponent
       },
       {
-        path: 'update-quiz-question/:id/:content', component: UpdateQuizQuestionComponent
+        path: 'update-quiz-question/:id', component: UpdateQuizQuestionComponent
       }
     ]
   },

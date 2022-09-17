@@ -6,6 +6,7 @@ import { QuizDTO } from 'src/app/datatransferobject/quiz-dto';
 import { QuestionService } from 'src/app/services/admin/question.service';
 import { QuizService } from 'src/app/services/admin/quiz.service';
 import Swal from 'sweetalert2';
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'app-update-quiz-question',
@@ -14,11 +15,11 @@ import Swal from 'sweetalert2';
 })
 export class UpdateQuizQuestionComponent implements OnInit {
 
+  Editor = ClassicEditor;
   updateQuestionForm!: FormGroup;
   questionDTO: QuestionDTO | undefined;
   questionDTOTemp: QuestionDTO | undefined;
   questionId: any;
-  questionContent: any;
   quizDTO: any;
   quizId: any;
   quizTitle: any;
@@ -27,7 +28,6 @@ export class UpdateQuizQuestionComponent implements OnInit {
 
   ngOnInit(): void {
     this.questionId = this.activatedRoute.snapshot.params['id'];
-    this.questionContent = this.activatedRoute.snapshot.params['content'];
 
     this.questionService.getSingleQuestionById(this.questionId).subscribe((response) => {
       this.questionDTO = response;

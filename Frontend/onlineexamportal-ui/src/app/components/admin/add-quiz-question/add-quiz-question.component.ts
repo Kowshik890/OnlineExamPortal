@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { QuestionDTO } from 'src/app/datatransferobject/question-dto';
 import { QuestionService } from 'src/app/services/admin/question.service';
 import Swal from 'sweetalert2';
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'app-add-quiz-question',
@@ -12,6 +13,7 @@ import Swal from 'sweetalert2';
 })
 export class AddQuizQuestionComponent implements OnInit {
 
+  Editor = ClassicEditor;
   quizId: number = 0;
   quizTitle: any;
   addQuestionForm!: FormGroup;
