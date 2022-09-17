@@ -53,6 +53,10 @@ N.B: under development...
         }
        })
     ```
+* CKEditor as Rich Text Editor
+  * npm install --save @ckeditor/ckeditor5-angular
+  * npm install --save @ckeditor/ckeditor5-build-classic
+  * For details: https://ckeditor.com/docs/ckeditor5/latest/installation/getting-started/frameworks/angular.html
 
 ## Backend
 * Add CORS Mapping to avoid "No 'Access-Control-Allow-Origin' header is present"
