@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from 'src/app/services/admin/category.service';
+import { CategoryDataService } from 'src/app/services/shareddata/category-data.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -10,10 +11,12 @@ import Swal from 'sweetalert2';
 export class UserSidebarComponent implements OnInit {
 
   categories: any;
+  categoryId: any;
 
   constructor(private categoryService: CategoryService) { }
 
   ngOnInit(): void {
+    this.categoryId = 0;
     this.categoryService.getAllCategories().subscribe((response) => {
       this.categories = response;
     }, 
@@ -25,10 +28,6 @@ export class UserSidebarComponent implements OnInit {
         confirmButtonText: 'OK'
       })
     })
-  }
-
-  clickedButton(categoryId: any) {
-    console.log("categoryId: " + categoryId);
   }
 
 }
