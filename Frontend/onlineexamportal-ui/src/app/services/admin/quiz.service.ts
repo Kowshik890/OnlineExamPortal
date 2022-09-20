@@ -14,7 +14,11 @@ export class QuizService {
   constructor(private http: HttpClient) { }
 
   getAllQuizzes() {
-    return this.http.get(`${this.baseURL}/api/quiz/all`);
+    return this.http.get(`${this.baseURL}/api/quiz/all/desc`);
+  }
+
+  getAllQuizzesAsc() {
+    return this.http.get(`${this.baseURL}/api/quiz/all/asc`);
   }
 
   addQuiz(addQuizMetaData: QuizDTO): Observable<QuizDTO> {
