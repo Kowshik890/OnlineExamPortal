@@ -1,5 +1,7 @@
 package com.project.onlineexamportal.repository;
 
+import com.project.onlineexamportal.model.exam.Category;
+import com.project.onlineexamportal.model.exam.Question;
 import com.project.onlineexamportal.model.exam.Quiz;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -13,6 +15,8 @@ import java.util.List;
 @Repository
 public interface QuizRepository extends JpaRepository<Quiz, Long> {
     List<Quiz> findAllByOrderByIdDesc();
+
+    List<Quiz> findByCategory(Category category);
 
     // Custom Delete Method using Delete Query
     /*@Transactional

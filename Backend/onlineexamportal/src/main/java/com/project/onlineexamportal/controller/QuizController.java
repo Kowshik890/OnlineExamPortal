@@ -1,5 +1,6 @@
 package com.project.onlineexamportal.controller;
 
+import com.project.onlineexamportal.model.exam.Question;
 import com.project.onlineexamportal.model.exam.Quiz;
 import com.project.onlineexamportal.service.QuizService;
 import lombok.AllArgsConstructor;
@@ -31,6 +32,13 @@ public class QuizController {
     @ResponseStatus(HttpStatus.OK)
     public List<Quiz> getAllQuizzesAsc() {
         return this.quizService.getAllQuizzesAsc();
+    }
+
+    // get all Quizzes for specific Category
+    @GetMapping("/category/{categoryId}")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Quiz> getAllQuizzesFromCategory(@PathVariable("categoryId") Long categoryId) {
+        return this.quizService.getAllQuizzesFromCategory(categoryId);
     }
 
     @GetMapping("/{quizId}")

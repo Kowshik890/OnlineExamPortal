@@ -1,5 +1,7 @@
 package com.project.onlineexamportal.service;
 
+import com.project.onlineexamportal.model.exam.Category;
+import com.project.onlineexamportal.model.exam.Question;
 import com.project.onlineexamportal.model.exam.Quiz;
 import com.project.onlineexamportal.repository.QuizRepository;
 import lombok.AllArgsConstructor;
@@ -45,5 +47,12 @@ public class QuizService {
 
     public Quiz findQuizById(Long quizId) {
         return this.quizRepository.findById(quizId).orElseThrow(() -> new IllegalArgumentException("Cannot find quiz with id - " + quizId));
+    }
+
+    public List<Quiz> getAllQuizzesFromCategory(Long categoryId) {
+        Category category = new Category();
+        category.setId(categoryId);
+        List<Quiz> quizzesOfCategory = this.quizRepository.findByCategory(category);
+        return quizzesOfCategory;
     }
 }
