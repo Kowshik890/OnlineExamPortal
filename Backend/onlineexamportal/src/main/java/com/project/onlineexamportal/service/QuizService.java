@@ -17,8 +17,12 @@ public class QuizService {
         return this.quizRepository.save(quiz);
     }
 
-    public List<Quiz> getAllQuizzes() {
+    public List<Quiz> getAllQuizzesDesc() {
         return this.quizRepository.findAllByOrderByIdDesc();
+    }
+
+    public List<Quiz> getAllQuizzesAsc() {
+        return this.quizRepository.findAll();
     }
 
     public void deleteQuizById(Long quizId) {

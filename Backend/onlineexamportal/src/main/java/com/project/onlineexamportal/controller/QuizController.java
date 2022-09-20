@@ -21,10 +21,16 @@ public class QuizController {
         return this.quizService.addQuiz(quiz);
     }
 
-    @GetMapping("/all")
+    @GetMapping("/all/desc")
     @ResponseStatus(HttpStatus.OK)
-    public List<Quiz> getAllQuizzes() {
-        return this.quizService.getAllQuizzes();
+    public List<Quiz> getAllQuizzesDesc() {
+        return this.quizService.getAllQuizzesDesc();
+    }
+
+    @GetMapping("/all/asc")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Quiz> getAllQuizzesAsc() {
+        return this.quizService.getAllQuizzesAsc();
     }
 
     @GetMapping("/{quizId}")
