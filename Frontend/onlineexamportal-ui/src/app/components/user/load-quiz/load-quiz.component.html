@@ -19,6 +19,14 @@
                 </mat-card>
             </div>
         </div>
+        <div class="row" *ngIf="allQuizzes.length==0">
+            <mat-card class="ml10">
+                <mat-card-content>
+                    <h1>No quizzes in this category</h1>
+                </mat-card-content>
+            </mat-card>
+
+        </div>
     </div>
 </div>
 

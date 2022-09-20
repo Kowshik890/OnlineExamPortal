@@ -21,6 +21,10 @@ export class QuizService {
     return this.http.get(`${this.baseURL}/api/quiz/all/asc`);
   }
 
+  getAllQuizzesForCategory(categoryId: any) {
+    return this.http.get(`${this.baseURL}/api/quiz/category/${categoryId}`);
+  }
+
   addQuiz(addQuizMetaData: QuizDTO): Observable<QuizDTO> {
     return this.http.post<QuizDTO>(`${this.baseURL}/api/quiz/add`, addQuizMetaData);
   }

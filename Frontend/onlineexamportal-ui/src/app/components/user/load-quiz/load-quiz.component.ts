@@ -13,6 +13,7 @@ export class LoadQuizComponent implements OnInit {
 
   categoryId: any;
   allQuizzes: any;
+  quizzesOfCategory: any;
 
   constructor(private activatedRoute: ActivatedRoute, private quizService: QuizService) { }
 
@@ -20,11 +21,14 @@ export class LoadQuizComponent implements OnInit {
     this.activatedRoute.params.subscribe((params) => {
       this.categoryId = params['id'];
       if(this.categoryId == 0) {
-        console.log("category Id if " + this.categoryId);
-        this.quizService.getAllQuizzesAsc().subscribe((response) => {
+        this.getAllQuizzes();
+      }
+      else {
+        console.log("category Id else " + this.categoryId);
+        this.quizService.getAllQuizzesForCategory(this.categoryId).subscribe((response) => {
           this.allQuizzes = response;
-        },
-        (error) => {
+          console.log("allQuizzes: " + JSON.stringify(this.allQuizzes));
+        },(error) => {
           Swal.fire({
             title: 'Error!',
             text: 'Error in loading quizzes.',
@@ -33,11 +37,21 @@ export class LoadQuizComponent implements OnInit {
           })
         })
       }
-      else {
-        console.log("category Id else " + this.categoryId);
-      }
     })
-    
+  }
+
+  getAllQuizzes() {
+    this.quizService.getAllQuizzesAsc().subscribe((response) => {
+      this.allQuizzes = response;
+    },
+    (error) => {
+      Swal.fire({
+        title: 'Error!',
+        text: 'Error in loading quizzes.',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      })
+    })
   }
 
 }

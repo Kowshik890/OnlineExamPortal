@@ -42,6 +42,7 @@ import { AddQuizQuestionComponent } from './components/admin/add-quiz-question/a
 import { UpdateQuizQuestionComponent } from './components/admin/update-quiz-question/update-quiz-question.component';
 import { UserSidebarComponent } from './components/user/user-sidebar/user-sidebar.component';
 import { LoadQuizComponent } from './components/user/load-quiz/load-quiz.component';
+import { UserWelcomeComponent } from './components/user/user-welcome/user-welcome.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { LoadQuizComponent } from './components/user/load-quiz/load-quiz.compone
     UpdateQuizQuestionComponent,
     UserSidebarComponent,
     LoadQuizComponent,
+    UserWelcomeComponent,
   ],
   imports: [
     BrowserModule,
