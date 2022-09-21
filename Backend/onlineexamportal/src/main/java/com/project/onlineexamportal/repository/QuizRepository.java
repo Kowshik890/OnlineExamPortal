@@ -16,7 +16,9 @@ import java.util.List;
 public interface QuizRepository extends JpaRepository<Quiz, Long> {
     List<Quiz> findAllByOrderByIdDesc();
 
-    List<Quiz> findByCategory(Category category);
+    List<Quiz> findByCategoryAndActive(Category category, Boolean _boolean);
+
+    List<Quiz> findByActive(Boolean _boolean);
 
     // Custom Delete Method using Delete Query
     /*@Transactional

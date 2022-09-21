@@ -28,13 +28,14 @@ public class QuizController {
         return this.quizService.getAllQuizzesDesc();
     }
 
+    // get all Active Quizzes in ascending order
     @GetMapping("/all/asc")
     @ResponseStatus(HttpStatus.OK)
-    public List<Quiz> getAllQuizzesAsc() {
-        return this.quizService.getAllQuizzesAsc();
+    public List<Quiz> getAllActiveQuizzesAsc() {
+        return this.quizService.getAllActiveQuizzesAsc();
     }
 
-    // get all Quizzes for specific Category
+    // get all Active Quizzes for specific Category in ascending order
     @GetMapping("/category/{categoryId}")
     @ResponseStatus(HttpStatus.OK)
     public List<Quiz> getAllQuizzesFromCategory(@PathVariable("categoryId") Long categoryId) {

@@ -23,8 +23,8 @@ public class QuizService {
         return this.quizRepository.findAllByOrderByIdDesc();
     }
 
-    public List<Quiz> getAllQuizzesAsc() {
-        return this.quizRepository.findAll();
+    public List<Quiz> getAllActiveQuizzesAsc() {
+        return this.quizRepository.findByActive(true);
     }
 
     public void deleteQuizById(Long quizId) {
@@ -52,7 +52,6 @@ public class QuizService {
     public List<Quiz> getAllQuizzesFromCategory(Long categoryId) {
         Category category = new Category();
         category.setId(categoryId);
-        List<Quiz> quizzesOfCategory = this.quizRepository.findByCategory(category);
-        return quizzesOfCategory;
+        return this.quizRepository.findByCategoryAndActive(category, true);
     }
 }
