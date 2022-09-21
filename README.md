@@ -10,6 +10,9 @@
 * Admin can add, view, delete and update category
 * Admin can add, view, delete and update quiz
 * Admin can add, view, delete and update Question
+* Normal user can view all active quizzes
+* Normal user can also view categorized quizzes
+
 
 N.B: under development...
 
