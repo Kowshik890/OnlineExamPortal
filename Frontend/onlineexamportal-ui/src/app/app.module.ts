@@ -43,6 +43,7 @@ import { UpdateQuizQuestionComponent } from './components/admin/update-quiz-ques
 import { UserSidebarComponent } from './components/user/user-sidebar/user-sidebar.component';
 import { LoadQuizComponent } from './components/user/load-quiz/load-quiz.component';
 import { UserWelcomeComponent } from './components/user/user-welcome/user-welcome.component';
+import { InstructionsComponent } from './components/user/instructions/instructions.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { UserWelcomeComponent } from './components/user/user-welcome/user-welcom
     UserSidebarComponent,
     LoadQuizComponent,
     UserWelcomeComponent,
+    InstructionsComponent,
   ],
   imports: [
     BrowserModule,
