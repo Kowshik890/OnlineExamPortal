@@ -20,6 +20,7 @@ import { AddQuizQuestionComponent } from './components/admin/add-quiz-question/a
 import { UpdateQuizQuestionComponent } from './components/admin/update-quiz-question/update-quiz-question.component';
 import { LoadQuizComponent } from './components/user/load-quiz/load-quiz.component';
 import { UserWelcomeComponent } from './components/user/user-welcome/user-welcome.component';
+import { InstructionsComponent } from './components/user/instructions/instructions.component';
 
 const routes: Routes = [
   {
@@ -77,6 +78,9 @@ const routes: Routes = [
       },
       {
         path: ':id', component: LoadQuizComponent
+      },
+      {
+        path: 'instructions/:id', component: InstructionsComponent
       }
     ]
   }

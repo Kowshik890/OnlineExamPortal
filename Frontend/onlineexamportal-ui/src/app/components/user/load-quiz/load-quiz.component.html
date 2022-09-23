@@ -12,7 +12,7 @@
                     <mat-card-content><p class="truncate">{{quiz.description}}</p></mat-card-content>
                     <mat-card-actions>
                         <button mat-button color="primary">View</button>
-                        <button mat-button color="warn">Start</button>
+                        <button mat-button [routerLink]="'/user/instructions/'+quiz.id" color="warn">Start</button>
                         <button mat-button color="basic">M.M: {{quiz.maxMarks}}</button>
                         <button mat-button color="basic">Q: {{quiz.numberOfQuestions}}</button>
                     </mat-card-actions>
@@ -29,5 +29,4 @@
         </div>
     </div>
 </div>
-
 
