@@ -12,7 +12,7 @@
 * Admin can add, view, delete and update Question
 * Normal user can view all active quizzes
 * Normal user can also view categorized quizzes
-
+* Once exam starts, user can't go back
 
 N.B: under development...
 
