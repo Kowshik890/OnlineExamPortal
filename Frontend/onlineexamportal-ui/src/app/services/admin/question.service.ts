@@ -17,6 +17,10 @@ export class QuestionService {
     return this.http.get(`${this.baseURL}/api/question/quiz/all/${quizId}`);
   }
 
+  getQuestionsofQuizForTest(quizId: number) {
+    return this.http.get(`${this.baseURL}/api/question/quiz/${quizId}`);
+  }
+
   addQuestionOfQuiz(addQuestionMetaData: QuestionDTO): Observable<QuestionDTO> {
     return this.http.post<QuestionDTO>(`${this.baseURL}/api/question/add`, addQuestionMetaData);
   }

@@ -1,0 +1,47 @@
+<div class="bootstrap-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+                <h3>instructions</h3>
+            </div>
+            <div class="col-md-8">
+                <ng-container *ngIf="questions">
+                    <h1 class="mt20">On going quiz: <b>{{questions[0].quiz.title}}</b></h1>
+                </ng-container>
+
+                <mat-card *ngFor="let question of questions; let i = index" class="mt10">
+                    <mat-card-content>
+                        <p>Q{{i+1}}: <span [innerHTML]="question.content"></span></p>
+                        <mat-divider></mat-divider>
+                        <br>
+
+                        <div class="row mt10">
+                            <div class="col-md-6">
+                                <input type="radio" [value]="question.option1" [name]="i">{{question.option1}}
+                            </div>
+                            <div class="col-md-6">
+                                <input type="radio" [value]="question.option2" [name]="i">{{question.option2}}
+                            </div>
+                        </div>
+
+                        <div class="row mt20">
+                            <div class="col-md-6">
+                                <input type="radio" [value]="question.option3" [name]="i">{{question.option3}}
+                            </div>
+                            <div class="col-md-6">
+                                <input type="radio" [value]="question.option4" [name]="i">{{question.option4}}
+                            </div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+                
+                <div class="container text-center mt20 mb20">
+                    <button mat-raised-button color="primary">Submit</button>
+                </div>
+            </div>
+            <div class="col-md-2">
+
+            </div>
+        </div>
+    </div>
+</div>
