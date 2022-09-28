@@ -61,6 +61,18 @@ N.B: under development...
   * npm install --save @ckeditor/ckeditor5-build-classic
   * For details: https://ckeditor.com/docs/ckeditor5/latest/installation/getting-started/frameworks/angular.html
 
+* Prevent Back Button (Going back to other URLs)
+   ```
+      constructor(private locationStrategy: LocationStrategy) { }
+      
+      preventBackButton() {
+          history.pushState(null, "", location.href);
+          this.locationStrategy.onPopState(() => {
+          history.pushState(null, "", location.href);
+       })
+     }
+   ```
+   
 ## Backend
 * Add CORS Mapping to avoid "No 'Access-Control-Allow-Origin' header is present"
 * Add 'Spring Security, io.jsonwebtoken (jjwt), javax.xml.bind (jaxb-api)' dependencies for JWT Authentication
