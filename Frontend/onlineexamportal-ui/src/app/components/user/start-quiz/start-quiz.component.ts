@@ -13,10 +13,12 @@ export class StartQuizComponent implements OnInit {
 
   quizId: any;
   questions: any;
-  marksGot = 0;
+  marksGot: any = 0;
   correctAnswer = 0;
   attempted = 0;
   isSubmit = false;
+  totalMarks: any; 
+  totalQuestions: any;
 
   constructor(private locationStrategy: LocationStrategy, private activatedRoute: ActivatedRoute, private questionService: QuestionService) { }
 
@@ -48,7 +50,7 @@ export class StartQuizComponent implements OnInit {
     Swal.fire({
       title: "Do you want to submit the quiz?",
       icon: "warning",
-      confirmButtonText: "Start",
+      confirmButtonText: "Submit",
       showCancelButton: true
     }).then((response) => {
       if(response.isConfirmed) {
@@ -58,7 +60,7 @@ export class StartQuizComponent implements OnInit {
           this.questions.forEach((question: { givenAnswer: any; answer: any; }) => {
             if(question.givenAnswer == question.answer) {
               this.correctAnswer++;
-              let marksSingle = this.questions[0].quiz.maxMarks / this.questions.length;
+              let marksSingle = (this.questions[0].quiz.maxMarks / this.questions.length);
               this.marksGot += marksSingle;
             }
 
@@ -66,6 +68,8 @@ export class StartQuizComponent implements OnInit {
               this.attempted++;
             }
           })
+          this.totalMarks = this.questions[0].quiz.maxMarks;
+          this.totalQuestions = this.questions.length;
           console.log("this.correctAnswer: " + this.correctAnswer);
           console.log("this.marksGot: " + this.marksGot);
           console.log("this.attempted: " + this.attempted);

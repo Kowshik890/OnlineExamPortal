@@ -57,12 +57,15 @@
                     <mat-card-title>Quiz Result</mat-card-title>
                 </mat-card-header>
                 <mat-card-content class="text-center">
-                    <h1>Marks Got: {{marksGot}}</h1>
+                    <h1>Total Questions: {{totalQuestions}}</h1>
+                    <h1>Questions Attempted: {{attempted}}</h1>
                     <h1>Correct Answers: {{correctAnswer}}</h1>
-                    <h1>MQuestions Attempted: {{attempted}}</h1>
+                    <h1>Marks Got: {{marksGot}}</h1>
+                    <h1>Total Marks: {{totalMarks}}</h1>
                 </mat-card-content>
                 <mat-card-actions class="text-center">
-                    <button mat-raised-button color="primary">Print Result</button>
+                    <button mat-raised-button color="primary">Print</button>
+                    <button mat-raised-button color="warn" [routerLink]="'/user/0'">Home</button>
                 </mat-card-actions>
             </mat-card>
         </div>
