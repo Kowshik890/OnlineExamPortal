@@ -13,6 +13,10 @@ export class StartQuizComponent implements OnInit {
 
   quizId: any;
   questions: any;
+  marksGot = 0;
+  correctAnswer = 0;
+  attempted = 0;
+  isSubmit = false;
 
   constructor(private locationStrategy: LocationStrategy, private activatedRoute: ActivatedRoute, private questionService: QuestionService) { }
 
@@ -48,6 +52,23 @@ export class StartQuizComponent implements OnInit {
       showCancelButton: true
     }).then((response) => {
       if(response.isConfirmed) {
+        
+          this.isSubmit = true;
+
+          this.questions.forEach((question: { givenAnswer: any; answer: any; }) => {
+            if(question.givenAnswer == question.answer) {
+              this.correctAnswer++;
+              let marksSingle = this.questions[0].quiz.maxMarks / this.questions.length;
+              this.marksGot += marksSingle;
+            }
+
+            if(question.givenAnswer.trim() != '') {
+              this.attempted++;
+            }
+          })
+          console.log("this.correctAnswer: " + this.correctAnswer);
+          console.log("this.marksGot: " + this.marksGot);
+          console.log("this.attempted: " + this.attempted);
           
         } else if (response.isDenied) {
           Swal.fire('Changes are not saved', '', 'info');

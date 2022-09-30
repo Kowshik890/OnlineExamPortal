@@ -1,8 +1,8 @@
-<div class="bootstrap-wrapper">
+<div class="bootstrap-wrapper" *ngIf="!isSubmit">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-2">
-                <h3>instructions</h3>
+                
             </div>
             <div class="col-md-8">
                 <ng-container *ngIf="questions">
@@ -42,6 +42,29 @@
             <div class="col-md-2">
 
             </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Show the result -->
+
+<div class="bootstrap-wrapper" *ngIf="isSubmit">
+    <div class="row mt20">
+        <div class="col-md-6 offset-md-3">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>Quiz Result</mat-card-title>
+                </mat-card-header>
+                <mat-card-content class="text-center">
+                    <h1>Marks Got: {{marksGot}}</h1>
+                    <h1>Correct Answers: {{correctAnswer}}</h1>
+                    <h1>MQuestions Attempted: {{attempted}}</h1>
+                </mat-card-content>
+                <mat-card-actions class="text-center">
+                    <button mat-raised-button color="primary">Print Result</button>
+                </mat-card-actions>
+            </mat-card>
         </div>
     </div>
 </div>
