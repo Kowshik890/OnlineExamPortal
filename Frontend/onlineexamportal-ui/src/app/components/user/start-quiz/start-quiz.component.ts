@@ -2,6 +2,7 @@ import { LocationStrategy } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { QuestionService } from 'src/app/services/admin/question.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-start-quiz',
@@ -25,7 +26,10 @@ export class StartQuizComponent implements OnInit {
   getAllQuestionsForSpecificQuiz() {
     this.questionService.getQuestionsofQuizForTest(this.quizId).subscribe((response) => {
       this.questions = response;
-      console.log(JSON.stringify(this.questions));
+      this.questions.forEach((question: { [x: string]: string; }) => {
+        question['givenAnswer'] = '';
+      })
+      console.log((this.questions));
     })
   }
 
@@ -36,4 +40,18 @@ export class StartQuizComponent implements OnInit {
     })
   }
 
+  submitQuiz() {
+    Swal.fire({
+      title: "Do you want to submit the quiz?",
+      icon: "warning",
+      confirmButtonText: "Start",
+      showCancelButton: true
+    }).then((response) => {
+      if(response.isConfirmed) {
+          
+        } else if (response.isDenied) {
+          Swal.fire('Changes are not saved', '', 'info');
+      }
+    })
+  }
 }
