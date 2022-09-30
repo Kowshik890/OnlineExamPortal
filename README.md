@@ -13,6 +13,7 @@
 * Normal user can view all active quizzes
 * Normal user can also view categorized quizzes
 * Once exam starts, user can't go back
+* User can start the quiz and submit after finishing the quiz
 
 N.B: under development...
 
