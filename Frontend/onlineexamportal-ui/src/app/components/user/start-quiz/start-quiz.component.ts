@@ -17,25 +17,28 @@ export class StartQuizComponent implements OnInit {
   correctAnswer = 0;
   attempted = 0;
   isSubmit = false;
-  totalMarks: any; 
+  totalMarks: any;
   totalQuestions: any;
+  timer: any;
 
   constructor(private locationStrategy: LocationStrategy, private activatedRoute: ActivatedRoute, private questionService: QuestionService) { }
 
   ngOnInit(): void {
     this.preventBackButton();
     this.quizId = this.activatedRoute.snapshot.params['id'];
-    console.log(this.quizId);
     this.getAllQuestionsForSpecificQuiz();
   }
 
   getAllQuestionsForSpecificQuiz() {
     this.questionService.getQuestionsofQuizForTest(this.quizId).subscribe((response) => {
       this.questions = response;
+
+      this.timer = this.questions.length * 30;
+
       this.questions.forEach((question: { [x: string]: string; }) => {
         question['givenAnswer'] = '';
       })
-      console.log((this.questions));
+      this.startTimer();
     })
   }
 
@@ -53,30 +56,46 @@ export class StartQuizComponent implements OnInit {
       confirmButtonText: "Submit",
       showCancelButton: true
     }).then((response) => {
-      if(response.isConfirmed) {
-        
-          this.isSubmit = true;
-
-          this.questions.forEach((question: { givenAnswer: any; answer: any; }) => {
-            if(question.givenAnswer == question.answer) {
-              this.correctAnswer++;
-              let marksSingle = (this.questions[0].quiz.maxMarks / this.questions.length);
-              this.marksGot += marksSingle;
-            }
-
-            if(question.givenAnswer.trim() != '') {
-              this.attempted++;
-            }
-          })
-          this.totalMarks = this.questions[0].quiz.maxMarks;
-          this.totalQuestions = this.questions.length;
-          console.log("this.correctAnswer: " + this.correctAnswer);
-          console.log("this.marksGot: " + this.marksGot);
-          console.log("this.attempted: " + this.attempted);
-          
-        } else if (response.isDenied) {
-          Swal.fire('Changes are not saved', '', 'info');
+      if (response.isConfirmed) {
+        this.evalQuiz();
+      } else if (response.isDenied) {
+        Swal.fire('Changes are not saved', '', 'info');
       }
     })
+  }
+
+  startTimer() {
+    let time = window.setInterval(() => {
+      if (this.timer <= 0) {
+        this.evalQuiz();
+        clearInterval(time);
+      } else {
+        this.timer--;
+      }
+    }, 1000)
+  }
+
+  getFormattedTime() {
+    let mm = Math.floor(this.timer / 60);
+    let ss = this.timer - mm * 60;
+    return `${mm} min : ${ss} sec`
+  }
+
+  evalQuiz() {
+    this.isSubmit = true;
+
+    this.questions.forEach((question: { givenAnswer: any; answer: any; }) => {
+      if (question.givenAnswer == question.answer) {
+        this.correctAnswer++;
+        let marksSingle = (this.questions[0].quiz.maxMarks / this.questions.length);
+        this.marksGot += marksSingle;
+      }
+
+      if (question.givenAnswer.trim() != '') {
+        this.attempted++;
+      }
+    })
+    this.totalMarks = this.questions[0].quiz.maxMarks;
+    this.totalQuestions = this.questions.length;
   }
 }
