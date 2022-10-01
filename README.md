@@ -14,6 +14,7 @@
 * Normal user can also view categorized quizzes
 * Once exam starts, user can't go back
 * User can start the quiz and submit after finishing the quiz
+* Set Timer using Progress Spinner to count down the time 
 
 N.B: under development...
 
@@ -74,6 +75,18 @@ N.B: under development...
      }
    ```
    
+* Use "Progress Spinner" to count the time
+   ```
+      let time = window.setInterval(() => {
+      if (this.timer <= 0) {
+        this.evalQuiz();
+        clearInterval(time);
+      } else {
+        this.timer--;
+      }
+      }, 1000)
+   ```
+
 ## Backend
 * Add CORS Mapping to avoid "No 'Access-Control-Allow-Origin' header is present"
 * Add 'Spring Security, io.jsonwebtoken (jjwt), javax.xml.bind (jaxb-api)' dependencies for JWT Authentication
