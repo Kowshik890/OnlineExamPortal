@@ -20,6 +20,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from "ngx-ui-loader";
 
 import { NavbarComponent } from './components/generic/navbar/navbar.component';
 import { FooterComponent } from './components/generic/footer/footer.component';
@@ -94,7 +95,11 @@ import { StartQuizComponent } from './components/user/start-quiz/start-quiz.comp
     MatTableModule,
     MatSlideToggleModule,
     CKEditorModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    NgxUiLoaderModule,
+    NgxUiLoaderHttpModule.forRoot({
+      showForeground: true
+    })
   ],
   providers: [authInterceptorProvider],
   bootstrap: [AppComponent]
