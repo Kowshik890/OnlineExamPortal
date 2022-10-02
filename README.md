@@ -87,6 +87,19 @@ N.B: under development...
       }, 1000)
    ```
 
+ * Use Loader (ngx-ui-loader) in whole App in 3 steps
+    * npm i ngx-ui-loader
+    * add "import { NgxUiLoaderModule } from "ngx-ui-loader";" in app.module.ts file
+    * add "NgxUiLoaderModule" in imports array
+    * add "NgxUiLoaderHttpModule" in imports array to load for each and every HTTP Request
+    * to show the loader in the center of the web page
+       ```
+          NgxUiLoaderHttpModule.forRoot({
+             showForeground: true
+          })
+       ```
+    * Documentation Link: https://tdev.app/ngx-ui-loader
+
 ## Backend
 * Add CORS Mapping to avoid "No 'Access-Control-Allow-Origin' header is present"
 * Add 'Spring Security, io.jsonwebtoken (jjwt), javax.xml.bind (jaxb-api)' dependencies for JWT Authentication
