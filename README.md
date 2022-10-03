@@ -15,6 +15,7 @@
 * Once exam starts, user can't go back
 * User can start the quiz and submit after finishing the quiz
 * Set Timer using Progress Spinner to count down the time 
+  * If user can't finish the quiz within time, then the quiz will be automatically submitted
 
 N.B: under development...
 
@@ -127,3 +128,11 @@ N.B: under development...
 * Class Diagram Between Category, Quiz and Question
 
    [![CD2-Category-Quiz-Question.png](https://i.postimg.cc/mZ6qVwmq/CD2-Category-Quiz-Question.png)](https://postimg.cc/mhC8gQfN)
+   
+   
+* Adding "@Transient" in Question Model for givenAnswer attribute
+   * @Transient is used to not to store data in DB of that attribute
+   ```
+      @Transient
+      private String givenAnswer;
+   ```
