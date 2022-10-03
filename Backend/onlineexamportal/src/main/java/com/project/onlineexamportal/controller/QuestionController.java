@@ -5,9 +5,11 @@ import com.project.onlineexamportal.model.exam.Quiz;
 import com.project.onlineexamportal.service.QuestionService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/question")
@@ -40,6 +42,31 @@ public class QuestionController {
     @ResponseStatus(HttpStatus.OK)
     public List<Question> getAllQuestionsOfQuizAdmin(@PathVariable("quizId") Long quizId) {
         return this.questionService.getALLQuestionsOfQuizAdmin(quizId);
+    }
+
+    // evaluate-quiz
+    @PostMapping("/evaluate-quiz")
+    @ResponseStatus(HttpStatus.OK)
+    public Map<String, Object> evaluateQuiz(@RequestBody List<Question> questions) {
+        double marksGot = 0;
+        int correctAnswer = 0;
+        int attempted = 0;
+        for (Question q: questions) {
+            // single questions
+            Question question = this.questionService.getQuestionById(q.getId());
+
+            if (question.getAnswer().equals(q.getGivenAnswer())) {
+                correctAnswer++;
+                double marksSingle = questions.get(0).getQuiz().getMaxMarks()/questions.size();
+                marksGot += marksSingle;
+            }
+            if (q.getGivenAnswer() != null) {
+                attempted++;
+            }
+        }
+
+        Map<String, Object> map = Map.of("marksGot", marksGot, "correctAnswer", correctAnswer, "attempted", attempted);
+        return map;
     }
 
     @PutMapping("/{questionId}")

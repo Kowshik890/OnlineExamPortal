@@ -27,9 +27,9 @@ public class Question {
     private String option3;
     @Column(length = 5000)
     private String option4;
-    @Column(length = 5000)
     private String answer;
-
+    @Transient
+    private String givenAnswer;
     @ManyToOne(fetch = FetchType.EAGER)   // one quiz may have many questions
     private Quiz quiz;
 }
