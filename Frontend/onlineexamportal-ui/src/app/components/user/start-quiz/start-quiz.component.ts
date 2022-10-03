@@ -35,9 +35,9 @@ export class StartQuizComponent implements OnInit {
 
       this.timer = this.questions.length * 30;
 
-      this.questions.forEach((question: { [x: string]: string; }) => {
+      /* this.questions.forEach((question: { [x: string]: string; }) => {
         question['givenAnswer'] = '';
-      })
+      }) */
       this.startTimer();
     })
   }
@@ -82,9 +82,21 @@ export class StartQuizComponent implements OnInit {
   }
 
   evalQuiz() {
-    this.isSubmit = true;
 
-    this.questions.forEach((question: { givenAnswer: any; answer: any; }) => {
+    this.questionService.evaluateQuiz(this.questions).subscribe((response: any) => {
+      this.marksGot = response.marksGot;
+      this.correctAnswer = response.correctAnswer;
+      this.attempted = response.attempted;
+      this.isSubmit = true;
+    }, (error)=> {
+      Swal.fire({
+        title: 'Error!',
+        text: 'Error in loading questions.',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      })
+    })
+    /* this.questions.forEach((question: { givenAnswer: any; answer: any; }) => {
       if (question.givenAnswer == question.answer) {
         this.correctAnswer++;
         let marksSingle = (this.questions[0].quiz.maxMarks / this.questions.length);
@@ -94,8 +106,12 @@ export class StartQuizComponent implements OnInit {
       if (question.givenAnswer.trim() != '') {
         this.attempted++;
       }
-    })
+    }) */
     this.totalMarks = this.questions[0].quiz.maxMarks;
     this.totalQuestions = this.questions.length;
+  }
+
+  print() {
+    window.print();
   }
 }

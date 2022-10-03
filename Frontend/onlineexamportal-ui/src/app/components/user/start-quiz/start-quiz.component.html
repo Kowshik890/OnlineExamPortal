@@ -73,7 +73,7 @@
                     <h1>Total Marks: {{totalMarks}}</h1>
                 </mat-card-content>
                 <mat-card-actions class="text-center">
-                    <button mat-raised-button color="primary">Print</button>
+                    <button mat-raised-button color="primary" (click)="print()">Print</button>
                     <button mat-raised-button color="warn" [routerLink]="'/user/0'">Home</button>
                 </mat-card-actions>
             </mat-card>

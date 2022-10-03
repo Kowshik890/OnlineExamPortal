@@ -36,4 +36,9 @@ export class QuestionService {
   updateQuestionById(questionId: any, questionDTO: QuestionDTO) {
     return this.http.put<QuestionDTO>(`${this.baseURL}/api/question/${questionId}`, questionDTO);
   }
+
+  // evaluate-quiz
+  evaluateQuiz(questions: any) {
+    return this.http.post(`${this.baseURL}/api/question/evaluate-quiz`, questions);
+  }
 }
