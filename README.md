@@ -15,6 +15,7 @@
 * Once exam starts, user can't go back
 * User can start the quiz and submit after finishing the quiz
 * Set Timer using Progress Spinner to count down the time 
+  * If user can't finish the quiz within time, then the quiz will be automatically submitted
 
 N.B: under development...
 
