@@ -1,5 +1,6 @@
 package com.project.onlineexamportal.model.exam;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,6 +28,7 @@ public class Question {
     private String option3;
     @Column(length = 5000)
     private String option4;
+    @JsonIgnore
     private String answer;
     @Transient
     private String givenAnswer;
