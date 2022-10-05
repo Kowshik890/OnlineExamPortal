@@ -49,10 +49,15 @@ public class QuestionService {
     public List<Question> getQuestionsOfQuiz(Long quizId) {
         Quiz quiz = this.quizRepository.findById(quizId).orElseThrow(() -> new IllegalArgumentException("Cannot find question with id - " + quizId));
        Set<Question> questions = quiz.getQuestions();
-       List questionList = new ArrayList(questions);
+       List<Question> questionList = new ArrayList(questions);
        if(questionList.size()> quiz.getNumberOfQuestions()) {    // check the Number of Questions of a quiz is greater or not than total number of questions of that quiz
            questionList = questionList.subList(0, quiz.getNumberOfQuestions()+1);
        }
+
+       questionList.forEach((question) -> {
+           question.setAnswer("");
+       });
+
        Collections.shuffle(questionList);   // shuffle the questions
        return questionList;
     }
