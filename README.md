@@ -136,5 +136,4 @@ N.B: under development...
       @Transient
       private String givenAnswer;
    ```
-* Adding "@JsonIgnore" in Question Model in answer attribute 
-    * @JsonIgnore is used so that it does not appear in client side
+
