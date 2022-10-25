@@ -18,6 +18,9 @@
   * If user can't finish the quiz within time, then the quiz will be automatically submitted
 * User can see the result sheet after submiting the quiz
 
+## Deployment into AWS EC2
+* going on...
+
 ## Frontend
 * Angular Material
   * ng add @angular/material
