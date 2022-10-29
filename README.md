@@ -1,6 +1,6 @@
 # Online Exam Portal
 
-## This Online Exam Portal project is developing using Spring Boot, Angular, MySQL, JWT Authentication using Spring Security and AWS EC2.
+## This Online Exam Portal project is developing using Spring Boot, Angular, MySQL, and JWT Authentication using Spring Security.
 
 ## Project Functionalities
 * User Registration with validation
