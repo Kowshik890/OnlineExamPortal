@@ -20,10 +20,18 @@
 
 ## Deployment into AWS EC2
 * Select EC2 and choose an Instance type
-  * for this project Ubuntu is selected (Free tier eligible)
-* After creating an Operating system, connect it and open the terminal in browser
-
-
+  * For this project Ubuntu is selected (Free tier eligible)
+* After creating an Operating system, connect it after clicking the Intance ID and open the terminal in browser
+  [![Screenshot-2022-11-01-at-18-32-57.png](https://i.postimg.cc/6pn8fv2r/Screenshot-2022-11-01-at-18-32-57.png)](https://postimg.cc/0z558rCj)
+* By using command, ubuntu (which is inside the virtual private server) can be accessed
+* Install Java (Java version 17 is used for the project)
+  * sudo apt install openjdk-17-jre-headless
+* Install JDK
+  * sudo apt install openjdk-17-jdk-headless
+* To update the list, write this in the terminal
+  * sudo apt update
+  
+  
 * going on...
 
 ## Frontend
