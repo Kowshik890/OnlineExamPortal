@@ -30,8 +30,41 @@
   * sudo apt install openjdk-17-jdk-headless
 * To update the list, write this in the terminal
   * sudo apt update
-  
-  
+* Install MySQL Server
+  * sudo apt install mysql-server
+  * sudo mysql (to write command after installation)
+* To use DB from local machine, new user is created
+  * create user 'examuser'@'%' identified by 'password';
+  * grant all privileges on *.* to 'examuser'@'%' with grant option;
+  * flush privileges;
+  * exit
+  * mysql -u examuser -p
+    * Enter password:
+  * To use this "examuser" user from local machine
+    * go to instance
+    * select security and click on security group
+    * click edit inbound rules
+    
+      [![Screenshot-2022-11-01-at-20-26-52.png](https://i.postimg.cc/SQ9XbKp1/Screenshot-2022-11-01-at-20-26-52.png)](https://postimg.cc/Z0TYr4n6)
+    * to connect, open workbench
+    * go to EC2 Dashboard, select "Elastic IT Addresses"
+    
+      [![Screenshot-2022-11-01-at-20-36-00.png](https://i.postimg.cc/d0n2dV0j/Screenshot-2022-11-01-at-20-36-00.png)](https://postimg.cc/7CGJrD05)
+    * go to "Actions" and select "Associate Elastic IP address"
+    
+      [![Screenshot-2022-11-01-at-20-38-55.png](https://i.postimg.cc/wTcQH2dr/Screenshot-2022-11-01-at-20-38-55.png)](https://postimg.cc/XpqCkwqK)
+    * go to instance and copy the "Public IPv4 address" and paste that on workbench "SSH Hostname"
+    
+      [![Screenshot-2022-11-01-at-20-51-42.png](https://i.postimg.cc/kgC6MPyN/Screenshot-2022-11-01-at-20-51-42.png)](https://postimg.cc/SJZNV53j)
+    * SSH Password will be "AWS Login" password, "MySQL Server Port Password" will be that password which was provided while creating the user
+    * open workbench and click newly created MySQL Connections "learn-aws"
+    * go to ubuntu terminal and go to mysql by providing the username and password (e.g., mysql -u examuser -p)
+    * create database examportal;
+    * show databases; (for checking in both terminal and workbench) 
+
+
+
+
 * going on...
 
 ## Frontend
