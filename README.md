@@ -65,9 +65,25 @@
    * Update application.properties file with port number, database name, username and password used in creating new user
    * To create JAR file
      * Go to Maven and select Lifecycle and double click on install
-      
+     * JAR file will be created on target folder
+     * make new folder using ubuntu terminal (mkdir project)
+     * The JAR file should be uploaded into this project folder, but this folder should be permitted
+       * chmod 777 project/  (777 - permission of read, write and execute)
+     * The JAR file can't be uploaded directly, for that a third party software named "FileZilla" is used
+     * Need to connect FileZilla with the server to upload the JAR file
+       * go to FileZilla, create new site (learn-aws) and configure it
+         
+         [![Screenshot-2022-11-02-at-23-06-11.png](https://i.postimg.cc/zD26xf63/Screenshot-2022-11-02-at-23-06-11.png)](https://postimg.cc/BtDm6JqG)
+       * Drag and drop the JAR file into FileZilla
 
-
+         [![Screenshot-2022-11-02-at-23-12-55.png](https://i.postimg.cc/L5PWqtT7/Screenshot-2022-11-02-at-23-12-55.png)](https://postimg.cc/H8pzR7F4)
+     * go to ubuntu terminal and go to inside project folder and run the JAR file
+       * java -jar onlineexamportal.jar
+     * The port is 8080 which is not open from instance security
+     * go to security and click security group and click again in "Edit Inbound rules"
+     * Add rule and give 8080 as port number, select 0.0.0.0/0 and save it
+     * now go to browser, copy the "Public IPv4 address" from instance and paste it with 8080 (e.g., http://3.122.154.36:8080/)
+       
 
 * going on...
 
