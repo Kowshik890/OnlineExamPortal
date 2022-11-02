@@ -1,6 +1,6 @@
 # Online Exam Portal
 
-## This Online Exam Portal project is developing using Spring Boot, Angular and MySQL.
+## This Online Exam Portal project is developing using Spring Boot, Angular, MySQL, and JWT Authentication using Spring Security. In addition, deploying the project to AWS EC2.
 
 ## Project Functionalities
 * User Registration with validation
@@ -16,8 +16,76 @@
 * User can start the quiz and submit after finishing the quiz
 * Set Timer using Progress Spinner to count down the time 
   * If user can't finish the quiz within time, then the quiz will be automatically submitted
+* User can see the result sheet after submiting the quiz
 
-N.B: under development...
+## Deployment into AWS EC2
+* Select EC2 and choose an Instance type
+  * For this project Ubuntu is selected (Free tier eligible)
+* After creating an Operating system, connect it after clicking the Intance ID and open the terminal in browser
+  [![Screenshot-2022-11-01-at-18-32-57.png](https://i.postimg.cc/6pn8fv2r/Screenshot-2022-11-01-at-18-32-57.png)](https://postimg.cc/0z558rCj)
+* By using command, ubuntu (which is inside the virtual private server) can be accessed
+* Install Java (Java version 17 is used for the project)
+  * sudo apt install openjdk-17-jre-headless
+* Install JDK
+  * sudo apt install openjdk-17-jdk-headless
+* To update the list, write this in the terminal
+  * sudo apt update
+* Install MySQL Server
+  * sudo apt install mysql-server
+  * sudo mysql (to write command after installation)
+* To use DB from local machine, new user is created
+  * create user 'examuser'@'%' identified by 'password';
+  * grant all privileges on *.* to 'examuser'@'%' with grant option;
+  * flush privileges;
+  * exit
+  * mysql -u examuser -p
+    * Enter password:
+  * To use this "examuser" user from local machine
+    * go to instance
+    * select security and click on security group
+    * click edit inbound rules
+    
+      [![Screenshot-2022-11-01-at-20-26-52.png](https://i.postimg.cc/SQ9XbKp1/Screenshot-2022-11-01-at-20-26-52.png)](https://postimg.cc/Z0TYr4n6)
+    * to connect, open workbench
+    * go to EC2 Dashboard, select "Elastic IT Addresses"
+    
+      [![Screenshot-2022-11-01-at-20-36-00.png](https://i.postimg.cc/d0n2dV0j/Screenshot-2022-11-01-at-20-36-00.png)](https://postimg.cc/7CGJrD05)
+    * go to "Actions" and select "Associate Elastic IP address"
+    
+      [![Screenshot-2022-11-01-at-20-38-55.png](https://i.postimg.cc/wTcQH2dr/Screenshot-2022-11-01-at-20-38-55.png)](https://postimg.cc/XpqCkwqK)
+    * go to instance and copy the "Public IPv4 address" and paste that on workbench "SSH Hostname"
+    
+      [![Screenshot-2022-11-01-at-20-51-42.png](https://i.postimg.cc/kgC6MPyN/Screenshot-2022-11-01-at-20-51-42.png)](https://postimg.cc/SJZNV53j)
+    * SSH Password will be "AWS Login" password, "MySQL Server Port Password" will be that password which was provided while creating the user
+    * open workbench and click newly created MySQL Connections "learn-aws"
+    * go to ubuntu terminal and go to mysql by providing the username and password (e.g., mysql -u examuser -p)
+    * create database examportal;
+    * show databases; (for checking in both terminal and workbench) 
+ * Creating JAR file of Spring Boot Application
+   * Update application.properties file with port number, database name, username and password used in creating new user
+   * To create JAR file
+     * Go to Maven and select Lifecycle and double click on install
+     * JAR file will be created on target folder
+     * make new folder using ubuntu terminal (mkdir project)
+     * The JAR file should be uploaded into this project folder, but this folder should be permitted
+       * chmod 777 project/  (777 - permission of read, write and execute)
+     * The JAR file can't be uploaded directly, for that a third party software named "FileZilla" is used
+     * Need to connect FileZilla with the server to upload the JAR file
+       * go to FileZilla, create new site (learn-aws) and configure it
+         
+         [![Screenshot-2022-11-02-at-23-06-11.png](https://i.postimg.cc/zD26xf63/Screenshot-2022-11-02-at-23-06-11.png)](https://postimg.cc/BtDm6JqG)
+       * Drag and drop the JAR file into FileZilla
+
+         [![Screenshot-2022-11-02-at-23-12-55.png](https://i.postimg.cc/L5PWqtT7/Screenshot-2022-11-02-at-23-12-55.png)](https://postimg.cc/H8pzR7F4)
+     * go to ubuntu terminal and go to inside project folder and run the JAR file
+       * java -jar onlineexamportal.jar
+     * The port is 8080 which is not open from instance security
+     * go to security and click security group and click again in "Edit Inbound rules"
+     * Add rule and give 8080 as port number, select 0.0.0.0/0 and save it
+     * now go to browser, copy the "Public IPv4 address" from instance and paste it with 8080 (e.g., http://3.122.154.36:8080/)
+       
+
+* going on...
 
 ## Frontend
 * Angular Material
