@@ -61,10 +61,10 @@
     * go to ubuntu terminal and go to mysql by providing the username and password (e.g., mysql -u examuser -p)
     * create database examportal;
     * show databases; (for checking in both terminal and workbench) 
-  * Creating JAR file of Spring Boot Application
-    * Update application.properties file with port number, database name, username and password used in creating new user
-    * To create JAR file
-      * Go to Maven and select Lifecycle and double click on install
+ * Creating JAR file of Spring Boot Application
+   * Update application.properties file with port number, database name, username and password used in creating new user
+   * To create JAR file
+     * Go to Maven and select Lifecycle and double click on install
       
 
 
