@@ -15,6 +15,11 @@ public class UserController {
 
     private final UserService userService;
 
+    @GetMapping("/test")
+    public String test() {
+        return "Welcome to backend API of Exam Portal.";
+    }
+
     @PostMapping("/")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public User createUser(@RequestBody User user) throws Exception {
