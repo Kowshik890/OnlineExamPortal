@@ -84,6 +84,7 @@
      * Add rule and give 8080 as port number, select 0.0.0.0/0 and save it
      * now go to browser, copy the "Public IPv4 address" from instance and paste it with 8080 (e.g., http://3.122.154.36:8080/)
  * Executing spring boot application as background service using Ubuntu terminal
+   N.B: If we stop our ubuntu terminal, still the service will continue until it has been stop using (systemctl stop onlineexamportal) command
    * Add "<executable>true</executable>" inside build tag, under the configuration tag
    * Double click install (maven->Lifecycle) to create the JAR file
    * go to terminal and refresh and start with super user by commanding "sudo su"
@@ -92,7 +93,7 @@
    * A script should be created to execute the application as background service
      * go to inside project folder (/home/ubuntu/project#) and type cd /etc/systemd/system
      * create a service file inside "/etc/systemd/system" using vim (vim onlineexamportal.service)
-     * add this following code and modify in terms of USER and JAR file name
+     * add this following code and modify in terms of USER and JAR file name and at the end type esc + :wq! and enter
      
         ```
            [Unit]
@@ -107,7 +108,14 @@
            [Install]
            WantedBy=multi-user.target
         ```
-
+     * To enable service (systemctl enable onlineexamportal) [service name is onlineexamportal]
+     * To start service (systemctl start onlineexamportal)
+     * To see the status (systemctl status onlineexamportal)
+       * If the status is failed, that means, JAR file doesn't have permission.
+       * chmod 777 /home/ubuntu/project/onlineexamportal.jar
+       * then start the service with (systemctl start onlineexamportal) command
+     * To stop service (systemctl stop onlineexamportal)
+     * To restart service (systemctl restart onlineexamportal)
 * going on...
 
 ## Frontend
