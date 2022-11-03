@@ -83,7 +83,30 @@
      * go to security and click security group and click again in "Edit Inbound rules"
      * Add rule and give 8080 as port number, select 0.0.0.0/0 and save it
      * now go to browser, copy the "Public IPv4 address" from instance and paste it with 8080 (e.g., http://3.122.154.36:8080/)
-       
+ * Executing spring boot application as background service using Ubuntu terminal
+   * Add "<executable>true</executable>" inside build tag, under the configuration tag
+   * Double click install (maven->Lifecycle) to create the JAR file
+   * go to terminal and refresh and start with super user by commanding "sudo su"
+   * go to FileZilla and connect the site (learn-aws)
+   * go to project folder and override the JAR file with the new updated one
+   * A script should be created to execute the application as background service
+     * go to inside project folder (/home/ubuntu/project#) and type cd /etc/systemd/system
+     * create a service file inside "/etc/systemd/system" using vim (vim onlineexamportal.service)
+     * add this following code and modify in terms of USER and JAR file name
+     
+        ```
+           [Unit]
+           Description=A Spring Boot Application for Online Exam Portal
+           After=syslog.target
+
+           [Service]
+           User=ubuntu
+           ExecStart=/home/ubuntu/project/onlineexamportal.jar
+           SuccessExitStatus=143
+
+           [Install]
+           WantedBy=multi-user.target
+        ```
 
 * going on...
 
