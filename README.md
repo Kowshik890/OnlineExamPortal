@@ -1,6 +1,7 @@
 # Online Exam Portal
 
-## This Online Exam Portal project is developing using Spring Boot, Angular, MySQL, and JWT Authentication using Spring Security. In addition, deploying the project to AWS EC2.
+## This Online Exam Portal project is developing using Spring Boot, Angular, MySQL, and JWT Authentication using Spring Security. In addition, deploying the backend (server side) on AWS EC2 and the frontend (client side) on Nginx.
+
 
 ## Project Functionalities
 * User Registration with validation
@@ -18,7 +19,8 @@
   * If user can't finish the quiz within time, then the quiz will be automatically submitted
 * User can see the result sheet after submiting the quiz
 
-## Deployment into AWS EC2
+##
+## Deployment of Backend into AWS EC2
 * Select EC2 and choose an Instance type
   * For this project Ubuntu is selected (Free tier eligible)
 * After creating an Operating system, connect it after clicking the Intance ID and open the terminal in browser
@@ -116,8 +118,14 @@
        * then start the service with (systemctl start onlineexamportal) command
      * To stop service (systemctl stop onlineexamportal)
      * To restart service (systemctl restart onlineexamportal)
-* going on...
 
+##
+## Deployment of Frontend into Nginx
+* 
+
+* deployment is going on
+
+##
 ## Frontend
 * Angular Material
   * ng add @angular/material
@@ -200,6 +208,7 @@
        ```
     * Documentation Link: https://tdev.app/ngx-ui-loader
 
+##
 ## Backend
 * Add CORS Mapping to avoid "No 'Access-Control-Allow-Origin' header is present"
 * Add 'Spring Security, io.jsonwebtoken (jjwt), javax.xml.bind (jaxb-api)' dependencies for JWT Authentication
