@@ -49,7 +49,6 @@ public class UserService {
             user.setProfile(user.getUsername()+ ".jpg");
             user.getUserRoles().addAll(userRoles);
             user.setPassword(passwordEncoder.encode(user.getPassword()));
-            System.out.println("Username 52: " + user.getUsername());
             tempUser = this.userRepository.save(user);
         }
         return tempUser;
