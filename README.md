@@ -121,7 +121,7 @@
 
 ##
 ## Deployment of Frontend into Nginx
-* First generate a dist folder in frontend using (ng build --prod) command
+* First generate a dist folder in frontend using (ng build --configuration production) command
 
 * deployment is going on
 
