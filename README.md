@@ -122,6 +122,24 @@
 ##
 ## Deployment of Frontend into Nginx
 * First generate a dist folder in frontend using (ng build --configuration production) command
+* Install Nginx on AWS EC2 instance
+  * First go to EC2 instance and click the instance and click connect
+  * Click SSH Client and copy this (ssh -i "learn-aws.pem" ubuntu@ec2-3-122-154-36.eu-central-1.compute.amazonaws.com) command
+  * Go to the folder where (learn-aws.pem) file is downloaded and open terminal
+  * paste the above command in the terminal
+    * If "UNPROTECTED PRIVATE KEY FILE" warning comes, apply chmod 700 <filename> (e.g., learn-aws.pem)
+    * chmod 700 is used because it protects a file against any access from other users, while the issuing user still has full access.
+  * login with super user by (sudo su)
+  * use the command (apt update) to update repositories and all
+  * use the command (apt install nginx) to install Nginx
+    * To enable service (systemctl enable nginx)
+    * To start service (systemctl start nginx)
+    * To see the status (systemctl status nginx)
+    * To stop service (systemctl stop nginx)
+    * To restart service (systemctl restart nginx)
+  * Go to instance and click security and click security groups
+  * Click Edit inbound rules and add new rule as port 80 and select 0.0.0.0/0 and save that
+  * To check whether Nginx is installed or not, copy the Public IPv4 address from instance (e.g., 3.122.154.36) and run it to browser 
 
 * deployment is going on
 
