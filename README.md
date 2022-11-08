@@ -140,7 +140,20 @@
   * Go to instance and click security and click security groups
   * Click Edit inbound rules and add new rule as port 80 and select 0.0.0.0/0 and save that
   * To check whether Nginx is installed or not, copy the Public IPv4 address from instance (e.g., 3.122.154.36) and run it to browser 
-
+  * Go to inside the Dist folder from frontend application and drag the folder and drop it to FileZilla
+  * Use the command (cd /etc/nginx/conf.d/) and press enter
+  * Create a file (3.122.154.36.conf) to configure the file for Nginx 
+    ```
+       server {
+         listen 0.0.0.0/80;
+         root /home/ubuntu/project/onlineexamportal-ui;
+         server_name onlineexamportalbykowshik.de;
+         location / {
+            try_files $uri $uri/ /index.html;
+         }
+       }
+    ```
+  * now restart the server by using the command (systemctl restart nginx) and after that, check the status as well inside "/etc/nginx/conf.d" path
 * deployment is going on
 
 ##
