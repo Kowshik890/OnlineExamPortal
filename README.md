@@ -145,7 +145,7 @@
   * Create a file (3.122.154.36.conf) to configure the file for Nginx 
     ```
        server {
-         listen 0.0.0.0/80;
+         listen 0.0.0.0:80;
          root /home/ubuntu/project/onlineexamportal-ui;
          server_name onlineexamportalbykowshik.de;
          location / {
