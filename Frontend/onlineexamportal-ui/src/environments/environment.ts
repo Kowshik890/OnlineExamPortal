@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl: 'http://onlineexamportalbykowshik:8080'
+  apiBaseUrl: 'http://onlineexamportalbykowshik.de:8080'
 };
 
 /*
