@@ -154,7 +154,9 @@
        }
     ```
   * now restart the server by using the command (systemctl restart nginx) and after that, check the status as well inside "/etc/nginx/conf.d" path
-* deployment is going on
+
+
+* deployment is going on (internal error 500: permission related problem)
 
 ##
 ## Frontend
