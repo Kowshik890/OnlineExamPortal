@@ -154,7 +154,7 @@
        }
     ```
   * now restart the server by using the command (systemctl restart nginx) and after that, check the status as well inside "/etc/nginx/conf.d" path
-* deployment is going on
+
 
 ##
 ## Frontend
@@ -215,6 +215,7 @@
    ```
    
 * Use "Progress Spinner" to count the time
+   * Other customized spinner module: https://hackafro.github.io/angular-epic-spinners/
    ```
       let time = window.setInterval(() => {
       if (this.timer <= 0) {
