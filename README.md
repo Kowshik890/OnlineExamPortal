@@ -215,6 +215,7 @@
    ```
    
 * Use "Progress Spinner" to count the time
+   * Other customized spinner module: https://hackafro.github.io/angular-epic-spinners/
    ```
       let time = window.setInterval(() => {
       if (this.timer <= 0) {
